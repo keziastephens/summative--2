@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none; }
+
+html {
+  font-size: 65.5%; }
+
+.nav {
+  min-height: 10vh;
+  width: 100vw;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  .nav-logo {
+    height: 6vh;
+    padding-left: 3rem; }
+  .nav-ul {
+    display: flex;
+    align-items: center;
+    margin: 1rem; }
+  .nav-li {
+    font-size: 1.3rem;
+    color: black;
+    padding: 1rem; }
+  .nav-right {
+    display: flex; }
+
+.search-container {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  border: 2px solid black;
+  border-radius: 1rem;
+  margin-right: 1rem;
+  height: 4.5vh; }
+
+.search-box {
+  background: none;
+  border: none;
+  border-right: 2px solid black; }
+
+.search-icon {
+  pointer-events: none;
+  font-size: 1.5rem;
+  color: black;
+  margin: 0.5rem;
+  padding-left: 0.3rem; }
+
+.hamburger-menu {
+  height: 35px;
+  display: none; }
+
+/* media queries */
+/* $mobile: "(min-width: 400px) and (max-width:749px)";
+$tablet: "(min-width:750px) and (max-width:1023px)";
+$desktop: "(min-width:1024px)";
+ */
+.intro {
+  height: 83vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url(../img/roys-peak.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat; }
+  .intro-header {
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    font-size: 5rem;
+    color: white; }
+  .intro-header__two {
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    font-size: 10rem;
+    color: white; }
+  .intro-paragraph {
+    font-size: 2rem;
+    color: white; }
+
+.form-container {
+  width: 100vw;
+  height: 10vh;
+  position: relative; }
+
+.form {
+  overflow: hidden;
+  min-height: 70%;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 2.5rem; }
+
+.form-item {
+  height: 80%;
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  border-right: 0.1rem solid rgba(0, 0, 0, 0.1); }
+
+.form-input {
+  padding: 0.5rem;
+  background: none;
+  border: none; }
+
+.form-input__location, .form-input__people {
+  margin-top: 0.5rem; }
+
+input[type="date"]::-webkit-datetime-edit-text,
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-day-field,
+input[type="date"]::-webkit-datetime-edit-year-field {
+  color: blue; }
+
+.submitBtn {
+  width: 20%;
+  background: none;
+  padding: 1rem;
+  border: none;
+  cursor: pointer; }
+
+.submitBtn:hover {
+  color: #d89a9a; }
+
+.footer {
+  background: black;
+  min-height: 7vh;
+  width: 100vw;
+  display: flex;
+  align-items: center; }
+
+.tnz-logo {
+  padding-left: 1rem;
+  height: 6vh; }
+
+.acommodation-container {
+  height: 83vh;
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: url(../img/roys-peak.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+  overflow-y: scroll; }
+
+.card {
+  padding: 0.2rem;
+  margin: 2rem;
+  height: 50vh;
+  width: 25vw; }
+
+.card-img-top {
+  min-height: 80%;
+  min-width: 100%;
+  background-size: cover;
+  background-position: center; }
+
+.card-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+body {
+  overflow-x: hidden; }
+
+a {
+  text-decoration: none; }
+
+/*# sourceMappingURL=style.css.map */

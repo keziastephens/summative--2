@@ -1,0 +1,65 @@
+.nav{
+    min-height: 10vh;
+    width: 100vw;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-logo{
+        height: 6vh;
+        padding-left: 3rem;
+    }
+
+    &-ul{
+        display: flex;
+        align-items: center;
+        margin: 1rem;
+    }
+
+    &-li{
+        font-size: 1.3rem;
+        color: black;
+        padding: 1rem;
+    }
+
+    &-right{
+        display: flex;
+    }
+}
+
+.search-container{
+    
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border: 2px solid black;
+    border-radius: 1rem;
+    margin-right: 1rem;
+    height: 4.5vh;
+}
+
+.search-box{
+    background: none;
+    border: none;
+    border-right: 2px solid black;
+}
+
+.search-icon{
+    pointer-events: none;
+    font-size: 1.5rem;
+    color: black;
+    margin: 0.5rem;
+    padding-left: 0.3rem;
+}
+
+.hamburger-menu{
+    height: 35px;
+    display: none;
+}
+
+// @media only screen and (max-width: 600px) {
+//     .hamburger {
+//         display: block;
+//     }
+//   }

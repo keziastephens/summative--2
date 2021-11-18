@@ -1,0 +1,35 @@
+.acommodation-container{
+    height: 83vh;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: url(../img/roys-peak.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: none;
+    overflow-y: scroll;
+    // display: none;
+
+
+}
+
+.card{
+    padding: 0.2rem;
+    margin: 2rem;
+    height: 50vh;
+    width: 25vw;
+}
+
+.card-img-top{
+    min-height: 80%;
+    min-width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-body{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
