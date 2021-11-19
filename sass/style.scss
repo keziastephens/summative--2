@@ -4,13 +4,5 @@
 @import 'intro';
 @import 'footer';
 @import 'card';
+@import 'mixins';
 
-
-
-body{
-    overflow-x: hidden;
-}
-
-a{
-    text-decoration: none;
-}

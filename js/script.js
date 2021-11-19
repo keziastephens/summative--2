@@ -587,7 +587,7 @@ function userSubmit(event){
         alert('check out day cant be before check in date');
     } else{
         $('#introPage').hide(); 
-        // $('#acommodation-container').show();
+        $('#acommodationContainer').show();
     }
 
 
@@ -602,9 +602,31 @@ function userSubmit(event){
 
    displayOptions(dayDifference, valueOfPeople);
 
-
 };
 
+// function userSubmit(event){
+//     $("#checkInDate").datepicker({
+//         dateFormat: "dd-mm-yy",
+//         changeMonth: true,
+//         minDate: new Date(),
+//         maxDate: "+1y",
+//         onSelect: function(date){
+//             let selectDate = new Date(date);
+//             let msInADay = 86400000;
+//             let stDate = new Date(selectDate.getTime() + msInADay);
+
+//             $('#checkOutDate').datepicker('option', 'minDate', stDate);
+//             let endDate = new Date(selectDate.getTime() + 15 * msInADay)
+
+//             $('#checkOutDate').datepicker('option', 'maxDate', endDate)
+//         }
+//     });
+
+//     $("#checkOutDate").datepicker({
+//         dateFormat: 'dd-mm-yy',
+//         changeMonth: true
+//     });
+// }
 
 
 
@@ -629,6 +651,7 @@ function displayOptions(nights, guests){
             generateCard(i)
         };
     }
+    // modal();
 }
 
 
@@ -649,18 +672,26 @@ function displayOptions(nights, guests){
 // ===================================================================
 
 
-// function modal(){
-//     $('.card').click(function(){
-//         let i = 0;
-//         for(i = 0; i < objectArray.length; i++){
-//             if((this.id == objectArray[i].id){
-//                 $("#modalHeader")
-//             }
-//         }
-//     });
-// }
+function modal(){                                                                                                                                                                                                                                                                                                                                   
+    $('.card').click(function(){
+        console.log("click");
+        let i = 0;
+        for(i = 0; i < objectArray.length; i++){
+            if(parseInt(this.id) === objectArray[i].id){
+                $("#modalHeader").empty().append(
+                    `
+                    <h3 class="modal-header__title">${objectArray[i].name}</h3>
 
+                    <h3 class="modal-header__title">${objectArray[i].address}</h3>
 
+                    `
+                )
+            }
+        }
+    });
+}
+
+modal();
 
 
 
@@ -685,7 +716,7 @@ function displayOptions(nights, guests){
 function generateCard(x){
     $('#acommodationCardContainer').append(
         `
-        <div id="${objectArray[x].id}" class="card">
+        <div id="${objectArray[x].id}" class="card" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             <img src="${objectArray[x].image}" class="card-img-top" alt="...">
             <div class="card-body">
                 <div class="card-body__left">
@@ -699,6 +730,7 @@ function generateCard(x){
         </div>
         `    
     )
+    modal();
 };
 
 // ===================================================================

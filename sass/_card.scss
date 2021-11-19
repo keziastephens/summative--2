@@ -1,24 +1,45 @@
 .acommodation-container{
     height: 83vh;
     width: 100vw;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+
     background: url(../img/roys-peak.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: none;
     overflow-y: scroll;
-    // display: none;
+    display: none;
 
 
 }
+
+.filter-detail{
+    height: 5%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-right: 1rem;
+    justify-content: flex-end;
+    position: fixed;
+    z-index: 100;
+}
+
+.card-container{
+    height: 95%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;    
+
+}
+
 
 .card{
     padding: 0.2rem;
     margin: 2rem;
     height: 50vh;
-    width: 25vw;
+    width: 500px;
+    border-radius: 3rem;
+    font-family: "myFirstFont";
 }
 
 .card-img-top{
@@ -26,10 +47,21 @@
     min-width: 100%;
     background-size: cover;
     background-position: center;
+    border-radius: 2.8rem 2.8rem 0 0;
 }
 
 .card-body{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.card-title{
+    font-size: 1.7rem;
+}
+
+.card-text{
+    font-size: 1.2rem;
 }

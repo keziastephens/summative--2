@@ -7,6 +7,12 @@
 html {
   font-size: 65.5%; }
 
+body {
+  overflow-x: hidden; }
+
+a {
+  text-decoration: none; }
+
 .nav {
   min-height: 10vh;
   width: 100vw;
@@ -54,10 +60,6 @@ html {
   display: none; }
 
 /* media queries */
-/* $mobile: "(min-width: 400px) and (max-width:749px)";
-$tablet: "(min-width:750px) and (max-width:1023px)";
-$desktop: "(min-width:1024px)";
- */
 .intro {
   height: 83vh;
   width: 100vw;
@@ -81,7 +83,8 @@ $desktop: "(min-width:1024px)";
     color: white; }
   .intro-paragraph {
     font-size: 2rem;
-    color: white; }
+    color: white;
+    font-family: "myFirstFont"; }
 
 .form-container {
   width: 100vw;
@@ -150,36 +153,60 @@ input[type="date"]::-webkit-datetime-edit-year-field {
 .acommodation-container {
   height: 83vh;
   width: 100vw;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   background: url(../img/roys-peak.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: none;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  display: none; }
+
+.filter-detail {
+  height: 5%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-right: 1rem;
+  justify-content: flex-end;
+  position: fixed;
+  z-index: 100; }
+
+.card-container {
+  height: 95%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
 
 .card {
   padding: 0.2rem;
   margin: 2rem;
   height: 50vh;
-  width: 25vw; }
+  width: 500px;
+  border-radius: 3rem;
+  font-family: "myFirstFont"; }
 
 .card-img-top {
   min-height: 80%;
   min-width: 100%;
   background-size: cover;
-  background-position: center; }
+  background-position: center;
+  border-radius: 2.8rem 2.8rem 0 0; }
 
 .card-body {
   display: flex;
   align-items: center;
-  justify-content: space-between; }
+  justify-content: space-between;
+  padding-left: 2rem;
+  padding-right: 2rem; }
 
-body {
-  overflow-x: hidden; }
+.card-title {
+  font-size: 1.7rem; }
 
-a {
-  text-decoration: none; }
+.card-text {
+  font-size: 1.2rem; }
+
+@font-face {
+  font-family: "myFirstFont";
+  src: url(../UX/national-regular.otf); }
 
 /*# sourceMappingURL=style.css.map */
