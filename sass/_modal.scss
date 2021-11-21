@@ -1,0 +1,46 @@
+// .modal-content{
+//     height: 70vh;
+//     width: 70vw;
+// }
+
+
+.modal{
+    height: 70vh;
+    width: 70vw;
+}
+
+.modal-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    float: left;
+    font-family: "myFirstFont";
+}
+
+.modal-header__title{
+
+}
+
+.modal-header__title-two{
+    font-size: 1.2rem;
+}
+
+.modal-header__left{
+    flex-direction: column;
+}
+
+.modal-body__top{
+    display: flex;
+}
+
+// .modal-carousel{
+//     height: 30vh;
+// }
+
+// .modal-dialog{
+//     width: 70vw;
+// }
+
+.checkmarks-top{
+    display: flex;
+}

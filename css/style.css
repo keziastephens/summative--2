@@ -139,6 +139,29 @@ input[type="date"]::-webkit-datetime-edit-year-field {
 .submitBtn:hover {
   color: #d89a9a; }
 
+.modal {
+  height: 70vh;
+  width: 70vw; }
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  float: left;
+  font-family: "myFirstFont"; }
+
+.modal-header__title-two {
+  font-size: 1.2rem; }
+
+.modal-header__left {
+  flex-direction: column; }
+
+.modal-body__top {
+  display: flex; }
+
+.checkmarks-top {
+  display: flex; }
+
 .footer {
   background: black;
   min-height: 7vh;
@@ -181,9 +204,10 @@ input[type="date"]::-webkit-datetime-edit-year-field {
   padding: 0.2rem;
   margin: 2rem;
   height: 50vh;
-  width: 500px;
+  width: 650px;
   border-radius: 3rem;
-  font-family: "myFirstFont"; }
+  font-family: "myFirstFont";
+  cursor: pointer; }
 
 .card-img-top {
   min-height: 80%;

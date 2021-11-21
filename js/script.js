@@ -6,7 +6,9 @@ console.log('linked');
 // ===================================================================
 
 const submitByn = document.querySelector('#submitBtn');
-// const searchFilter = document.querySelector('#searchFilter');
+const searchFilter = document.querySelector('#searchFilter');
+const refreshButton = document.querySelector("#refresh")
+
 
 
 // ===================================================================
@@ -38,7 +40,13 @@ let objectArray = [
         minNight: 1,
         maxNight: 5,
         price: 157,
-        wifi: 'yes', 
+        wifi: 'Wifi Avaliable',
+        bed: 'Comfy double beds',
+        parking: 'Parking Avaliable',
+        tv: 'Comes with TV',
+        bathroom: 'Own bathroom',
+        dinner: 'Offers dinner meals',
+        offersDinner: 'yes', 
         image: '../img/hotels/hanmer-01.jpg',
         imageTwo: '../img/hotels/hanmer-02.jpg',
         imageThree: '../img/hotels/hanmer-03.jpg',
@@ -48,6 +56,7 @@ let objectArray = [
         longitude: -42.520532551319555,
         latitude: 172.83025672678912,
         address: '1 Conical Hill, Hanmer Springs 7334',
+        tags: ['hotel', 'hanmer', 'hanmer springs', 'hanmer springs hotel'],
         info: `Set among mature trees and surrounded by the Southern Alps, this beautifully restored local landmark has been transformed into a resort with outdoor swimming pool, tennis and petanque courts. Guests enjoy free WiFi.
 
         Guests at Hanmer Springs Hotel can choose from a range of accommodations options from hotel rooms to self-contained villas. Free car parking is available.
@@ -70,7 +79,13 @@ let objectArray = [
         minNight: 1,
         maxNight: 10,
         price: 30,
-        wifi: 'no',
+        wifi: 'Wifi Avaliable',
+        bed: 'Bunk beds and double beds',
+        parking: 'On Road Parking',
+        tv: 'Shared lounge',
+        bathroom: 'Shared bathroom',
+        dinner: 'Shared kitchen',
+        offersDinner: 'no', 
         image: '../img/hostels/kakapo-01.jpg',
         imageTwo: '../img/hostels/kakapo-02.jpg',
         imageThree: '../img/hostels/kakapo-03.jpg',
@@ -80,6 +95,7 @@ let objectArray = [
         longitude: -42.525790748940395,
         latitude: 172.82850799795324,
         address: '14 Amuri Avenue, Hanmer Springs 7334',
+        tags: ['hostel', 'hanmer', 'hanmer springs', 'kakapo', 'lodge', 'kakapo lodge', 'backpackers', 'kakapo lodge backpackers'],
         info: `This two-story purpose-built backpacker hostel features modern rooms, an open lounge with warm fireplace, and a relaxed, friendly atmosphere. Enjoy our spacious, well-appointed backpacker accommodation, movie hire, 1GB free WiFi daily, large kitchen, outdoor courtyard with views of the Southern Alps, and friendly hostel dog.
 
         Just three minutes' walk from the town's main attraction, Hanmer Springs Thermal Pools and Spa, and a pleasant stroll to numerous restaurants and stores, this hostel is great base to enjoy your relaxing Hanmer getaway.
@@ -98,7 +114,13 @@ let objectArray = [
         minNight: 3,
         maxNight: 10,
         price: 90,
-        wifi: 'yes',
+        wifi: 'Wifi Avaliable',
+        bed: 'Comfy double beds',        
+        parking: 'On Road Parking',
+        tv: 'Comes with TV',
+        bathroom: 'Own bathroom',
+        dinner: 'Small kitchen area',
+        offersDinner: 'no', 
         image: '../img/motels/chalets-01.jpg',
         imageTwo: '../img/motels/chalets-02.jpg',
         imageThree: '../img/motels/chalets-03.jpg',
@@ -108,7 +130,7 @@ let objectArray = [
         longitude: -42.51871342418204,
         latitude: 172.824080697953,
         address: '56 Jacks Pass Road, Hanmer Springs 7334',
-        tags: ['motel', 'queenstown', 'colonial', 'colonial village', 'colonial village motel', 'village'],
+        tags: ['motel', 'hanmer', 'hanmer springs', 'chalets', 'chalets motel'],
         info: `The Chalets Motel offers charming self-contained cottages with scenic mountain views. Featuring a DVD library, it is just 601 m from hot pools and Hanmer Springs’ village center.
 
         Heated chalets feature wood paneling and come with full kitchen. They offer parking space, a DVD player and comfortable lounge areas.
@@ -127,16 +149,23 @@ let objectArray = [
         minNight: 2,
         maxNight: 15,
         price: 240,
-        wifi: 'yes',
+        wifi: 'Wifi Avaliable',
+        bed: 'Comfy double beds',        
+        parking: 'Personal parking',
+        tv: 'Comes with TV',
+        bathroom: 'Large bathroom',
+        dinner: 'Large kitchen area',
+        offersDinner: 'no', 
         image: '../img/houses/riverview-01.jpeg',
-        imageTwo: '../img/houses/riverview-02.jpeg',
-        imageThree: '../img/houses/riverview-03.jpeg',
-        imageFour: '../img/houses/riverview-04.jpeg',
-        imageFive: '../img/houses/riverview-05.jpeg',
-        imageSix: '../img/houses/riverview-06.jpeg',
+        imageTwo: '../img/houses/riverview-02.jpg',
+        imageThree: '../img/houses/riverview-03.jpg',
+        imageFour: '../img/houses/riverview-04.jpg',
+        imageFive: '../img/houses/riverview-05.jpg',
+        imageSix: '../img/houses/riverview-06.jpg',
         longitude: -42.58037366550216,
         latitude: 172.78424810322687,
         address: '750 Hanmer Springs Road, Highway, Hanmer Springs 7334',
+        tags: ['house', 'hanmer', 'hanmer springs', 'riverview', 'river', 'riverview cottage', 'cottage'],
         info: `A cosy and spacious 1 Bedroom Cottage with lovely garden & mountain views. Free Continental self service breakfast. Kitchen has cooking elements, microwave, fridge/freezer-open plan with lounge area. Sky TV, free Wifi, a deck with great views. Bedroom is roomy-Queen bed, large bathroom with
         shower & spa bath. Located on main route to Hanmer Springs, just over the Waiau Ferry Bridge. The Cottage is ideal for couples, solo adventurers, and the business traveler.`
     },
@@ -164,7 +193,13 @@ let objectArray = [
         minNight: 1,
         maxNight: 5,
         price: 157,
-        wifi: 'yes', 
+        wifi: 'Wifi Avaliable',
+        bed: 'Comfy double beds',        
+        parking: 'Personal parking',
+        tv: 'Comes with TV',
+        bathroom: 'Large bathroom',
+        dinner: 'Offers dinner meals',
+        offersDinner: 'yes', 
         image: '../img/hotels/terrace-01.jpg',
         imageTwo: '../img/hotels/terrace-02.jpg',
         imageThree: '../img/hotels/terrace-03.jpg',
@@ -174,6 +209,7 @@ let objectArray = [
         longitude: -43.49897589664995,
         latitude: 171.6491313044863,
         address: '623 Coleridge Road, Windwhistle 7572',
+        tags: ['hotel', 'mount hutt', 'mt hutt', 'mount', 'terrace', 'terrace downs', 'resort', 'terrace downs resort'],
         info: `Situated in the picturesque Canterbury high country, Terrace Downs Resort features all day dining, an 18 hole golf course and a range of outdoor activities. The villas have open-plan living spaces with gas fires. Guests can enjoy free on-site parking.
 
         The cafe serves a menu of local produce and offers panoramic views of the mountains from breakfast to evening meals.
@@ -194,7 +230,13 @@ let objectArray = [
         minNight: 1,
         maxNight: 10,
         price: 30,
-        wifi: 'no',
+        wifi: 'Wifi Avaliable',
+        bed: 'Comfy double beds',
+        parking: 'Parking Avaliable',
+        tv: 'Comes with TV',
+        bathroom: 'Own bathroom',
+        dinner: 'Offers dinner meals',
+        offersDinner: 'yes', 
         image: '../img/hostels/tree-01.jpg',
         imageTwo: '../img/hostels/kakapo-02.jpeg',
         imageThree: '../img/hostels/kakapo-03.jpeg',
@@ -204,6 +246,7 @@ let objectArray = [
         longitude: -43.63581876794095,
         latitude: 171.64346558928645,
         address: '25 South Belt, Methven 7730',
+        tags: ['hostel', 'mount hutt', 'mt hutt', 'mount', 'big tree', 'lodge', 'big tree lodge', 'big', 'tree', 'methven'],
         info: `Located in Methven, Big Tree Lodge Methven is a colonial villa and former vicarage, offering free Wi-Fi and free bicycle hire. Guests can prepare a meal in the shared kitchen or socialise in the shared lounge.
         
         Big Tree Lodge is a 3-minute drive from Methven Golf Course. It is a 40-minute drive from Mt Hutt Ski Resort and a 70-minute drive from Christchurch Airport.
@@ -224,7 +267,13 @@ let objectArray = [
         minNight: 3,
         maxNight: 10,
         price: 90,
-        wifi: 'yes',
+        wifi: 'Wifi Avaliable',
+        bed: 'Comfy double beds',
+        parking: 'Parking Avaliable',
+        tv: 'Comes with TV',
+        bathroom: 'Own bathroom',
+        dinner: 'Small kitchen',
+        offersDinner: 'no', 
         image: '../img/motels/mthutt-01.jpg',
         imageTwo: '../img/motels/mthutt-02.jpg',
         imageThree: '../img/motels/mthutt-03.jpg',
@@ -234,7 +283,7 @@ let objectArray = [
         longitude: -43.62738085963577,
         latitude: 171.64752576915285,
         address: '205 Main Street, 7730 Methven, New Zealand',
-        tags: ['motel', 'queenstown', 'colonial', 'colonial village', 'colonial village motel', 'village'],
+        tags: ['motel', 'mount hutt', 'mt hutt', 'mt hutt motel', 'mount', 'mount hutt motel'],
         info: `Mount Hutt Motels is located in Methven and features a grass tennis court. The motel features free WiFi, parking and barbecue facilities.
 
         All units feature a well equipped kitchen, bathroom, dining and lounge area, flat-screen TV and DVDs. Each unit has parking at their door and a patio setting looking onto manicured lawns and award winning gardens.
@@ -255,7 +304,13 @@ let objectArray = [
         minNight: 2,
         maxNight: 15,
         price: 240,
-        wifi: 'yes',
+        wifi: 'Wifi Avaliable',
+        bed: 'Comfy double beds',
+        parking: 'Parking Avaliable',
+        tv: 'Comes with TV',
+        bathroom: 'Own bathroom',
+        dinner: 'Large kitchen',
+        offersDinner: 'no', 
         image: '../img/houses/montrose-01.jpg',
         imageTwo: '../img/houses/montrose-02.jpg',
         imageThree: '../img/houses/montrose-03.jpg',
@@ -265,6 +320,7 @@ let objectArray = [
         longitude: -43.47687674722087,
         latitude: 171.5891827539711,
         address: '592 Blackford Road, Rakaia Gorge RD12, 7782',
+        tags: ['house', 'mt hutt', 'mount hutt', 'mount', 'montrose', 'montrose estate', 'estate'],
         info: `Set on the base of Mount Hutt ski area, on 750 acres of prime riverfront land, Montrose Estate provides 3 chalets offering self-contained, luxury accommodations overlooking the Rakaia River, mountain ranges and a 5-acre lake.
 
         All chalets feature a separate kitchen, dining and living area with a balcony overlooking the stunning scenery. Free WiFi and cable channels are provided. There is a private bath in each and all linen is included. Some chalets have a hot tub.`
@@ -293,7 +349,13 @@ let objectArray = [
         minNight: 1,
         maxNight: 5,
         price: 157,
-        wifi: 'yes', 
+        wifi: 'Wifi Avaliable',
+        bed: 'Comfy double beds',
+        parking: 'Parking Avaliable',
+        tv: 'Comes with TV',
+        bathroom: 'Own bathroom',
+        dinner: 'Offers dinner meals',
+        offersDinner: 'yes', 
         image: '../img/hotels/heritage-01.jpg',
         imageTwo: '../img/hotels/heritage-02.jpg',
         imageThree: '../img/hotels/heritage-03.jpg',
@@ -303,6 +365,7 @@ let objectArray = [
         longitude: -45.03705503488247, 
         latitude: 168.64221621662745,
         address: '91 Fernhill Road, Queenstown 9300',
+        tags: ['hotel', 'queenstown', 'heritage', 'heritage hotel'],
         info: `You can enjoy soaking in the view of the Remarkables mountain range, rising from the waters of Lake Wakatipu, from the comfort of Heritage Queenstown. Crafted from centuries-old stone and cedar, this sophisticated hotel is suitable for business and leisure stays and boasts stunning views over Lake Wakatipu and Queenstown. It is located within a 5-minute drive from the town centre.
 
         It features an outdoor swimming pool, spa pool, fitness centre and sauna, and an elegant restaurant. Guests enjoy unlimited complimentary WiFi.
@@ -323,16 +386,23 @@ let objectArray = [
         minNight: 1,
         maxNight: 10,
         price: 30,
-        wifi: 'no',
+        wifi: 'Wifi Avaliable',
+        bed: 'Bunk beds',
+        parking: 'On-street parking',
+        tv: 'Shared lounge',
+        bathroom: 'Shared bathroom',
+        dinner: 'Shared kitchen',
+        offersDinner: 'no', 
         image: '../img/hostels/adventure-01.jpeg',
         imageTwo: '../img/hostels/adventure-02.jpeg',
         imageThree: '../img/hostels/adventure-03.jpeg',
         imageFour: '../img/hostels/adventure-04.jpeg',
         imageFive: '../img/hostels/adventure-05.jpeg',
-        imageSix: '../img/hostels/adventure-06.jpeg',
+        imageSix: '../img/hostels/adventure-06.jpg',
         longitude: -45.03109706843424, 
         latitude: 168.6607642700365,
         address: '36 Camp Street, Queenstown 9300',
+        tags: ['hostel', 'queenstown', 'adventure', 'adventure hostel'],
         info: `Situated in Queenstown and with Skyline Gondola and Luge reachable within less than 1 km, Adventure Queenstown Hostel features a tour desk, non-smoking rooms, free bikes, free WiFi throughout the property and a shared lounge. Boasting barbecue facilities, the hostel is close to several noted attractions, around 500 m from Fear Factory Queenstown, 800 m from Queenstown Chamber Of Commerce and less than 1 km from Queenstown Lakes District Library. The accommodation provides evening entertainment and a shared kitchen.
 
         The hostel offers a sun terrace.
@@ -351,7 +421,13 @@ let objectArray = [
         minNight: 3,
         maxNight: 10,
         price: 90,
-        wifi: 'yes',
+        wifi: 'Wifi Avaliable',
+        bed: 'Comfy double beds',
+        parking: 'Parking Avaliable',
+        tv: 'Comes with TV',
+        bathroom: 'Own bathroom',
+        dinner: 'Small kitchen',
+        offersDinner: 'no', 
         image: '../img/motels/colonial-01.jpg',
         imageTwo: '../img/motels/colonial-02.jpg',
         imageThree: '../img/motels/colonial-03.jpg',
@@ -382,7 +458,13 @@ let objectArray = [
         minNight: 2,
         maxNight: 15,
         price: 240,
-        wifi: 'yes',
+        wifi: 'Wifi Avaliable',
+        bed: 'Comfy double beds',
+        parking: 'Parking Avaliable',
+        tv: 'Comes with TV',
+        bathroom: 'Own bathroom',
+        dinner: 'Large kitchen',
+        offersDinner: 'no', 
         image: '../img/houses/modbox-01.jpg',
         imageTwo: '../img/houses/modbox-02.jpg',
         imageThree: '../img/houses/modbox-03.jpg',
@@ -392,6 +474,7 @@ let objectArray = [
         longitude: -45.01925336056335, 
         latitude: 168.70922560639272,
         address: '21 Perkins Road, Frankton, Queenstown 9300',
+        tags: ['house', 'queenstown', 'modbox', 'rua', 'modbox rua'],
         info: `This brand new, 2 bedroom property is perfectly nestled on Queenstown Hill. Enjoy uninterrupted views of Lake Wakatipu and The Remarkables mountain range. Located on a quiet street, with floor to ceiling windows this property is ultra private and comfortable.
         
         This property is located conveniently close to Queenstown CBD and the airport. Perfect for couples or small groups who want to enjoy Queenstown in luxury and style - but with the comforts of a well thought out holiday home.        
@@ -433,7 +516,13 @@ let objectArray = [
         minNight: 1,
         maxNight: 5,
         price: 157,
-        wifi: 'yes',
+        wifi: 'Wifi Avaliable',
+        bed: 'Comfy double beds',
+        parking: 'Parking Avaliable',
+        tv: 'Comes with TV',
+        bathroom: 'Own bathroom',
+        dinner: 'Offers dinner meals',
+        offersDinner: 'yes', 
         image: '../img/hotels/edgewater-01.jpg',
         imageTwo: '../img/hotels/edgewater-02.jpg',
         imageThree: '../img/hotels/edgewater-03.jpg',
@@ -443,6 +532,7 @@ let objectArray = [
         longitude: -44.69409967568055, 
         latitude: 169.11240812698765,
         address: 'Sargood Drive, 9305 Wanaka, New Zealand',
+        tags: ['hotel', 'wanaka', 'edge', 'edgewater', 'water', 'edgewater hotel'],
         info: `Edgewater is located on the edge of Lake Wanaka, only 2 km from Wanaka town centre. The property offers picturesque lake views, a day spa, a sauna and a tennis court. Staff are able to converse in English and Chinese.
 
         The hotel has a restaurant and a café, both offering lake views. Guests can enjoy great New Zealand cuisine and a wide range of regional wines. Chinese options for breakfast are available.
@@ -461,7 +551,13 @@ let objectArray = [
         minNight: 1,
         maxNight: 10,
         price: 30,
-        wifi: 'no',
+        wifi: 'Wifi Avaliable',
+        bed: 'Bunk beds',
+        parking: 'On-street parking',
+        tv: 'Shared lounge',
+        bathroom: 'Shared bathroom',
+        dinner: 'Shared kitchen',
+        offersDinner: 'no', 
         image: '../img/hostels/bakpaka-01.jpg',
         imageTwo: '../img/hostels/bakpaka-02.jpg',
         imageThree: '../img/hostels/bakpaka-03.jpg',
@@ -471,6 +567,7 @@ let objectArray = [
         longitude: -44.68901414566924,
         latitude: 169.1323944380868,
         address: '117 Lakeside Road, Wanaka 9305',
+        tags: ['hostel', 'wanaka', 'wanaka bakpaka', 'pakpaka', 'backpackers', 'wanaka bakpaka hostel'],
         info: `Wanaka Bakpaka offers quality budget backpacker accommodation for the independent traveler. We are the only hostel in Wanaka located right on the lakeside giving you spectacular picture postcard views of Lake Wanaka and the Southern Alps. Away from the town hustle but still only a 5 minute lakeside stroll to the centre for shopping, cafes, bars and restaurants.`
     },
     {
@@ -485,7 +582,13 @@ let objectArray = [
         minNight: 3,
         maxNight: 10,
         price: 90,
-        wifi: 'yes',
+        wifi: 'Wifi Avaliable',
+        bed: 'Bunk beds',
+        parking: 'On-street parking',
+        tv: 'Shared lounge',
+        bathroom: 'Shared bathroom',
+        dinner: 'Shared kitchen',
+        offersDinner: 'no', 
         image: '../img/motels/aspiring-01.jpg',
         imageTwo: '../img/motels/aspiring-02.jpg',
         imageThree: '../img/motels/aspiring-03.jpg',
@@ -495,7 +598,7 @@ let objectArray = [
         longitude: -45.033658410996054,
         latitude: 168.67620516931336,
         address: '136 Frankton Road, Queenstown 9300',
-        tags: ['motel', 'queenstown', 'colonial', 'colonial village', 'colonial village motel', 'village'],
+        tags: ['motel', 'wanaka', 'aspiring', 'aspiring lodge', 'aspiring lodge motel', 'lodge'],
         info: `Featuring panoramic views of the surrounding mountains, Aspiring Lodge Motel offers accommodations with a balcony or a private courtyard.
 
         Located right in the center of Wanaka, this motel is a 30-minute drive from the Cardrona and Treble Cone ski fields. Lake Wanaka is only 100 m away.
@@ -518,7 +621,13 @@ let objectArray = [
         minNight: 2,
         maxNight: 15,
         price: 240,
-        wifi: 'yes',
+        wifi: 'Wifi Avaliable',
+        bed: 'Comfy double beds',
+        parking: 'Parking Avaliable',
+        tv: 'Comes with TV',
+        bathroom: 'Own bathroom',
+        dinner: 'Large kitchen',
+        offersDinner: 'no', 
         image: '../img/houses/iron-01.jpg',
         imageTwo: '../img/houses/iron-02.jpg',
         imageThree: '../img/houses/iron-03.jpg',
@@ -528,6 +637,7 @@ let objectArray = [
         longitude: -44.68377088552741,
         latitude: 169.16160126931402,
         address: '1 Weatherall Close, Wanaka 9305',
+        tags: ['house', 'wanaka', 'mount iron', 'cabin', 'iron', 'mount iron cabin', 'mount'],
         info: `Mount Iron Cabin is a newly crafted stand-alone chalet on the side of Mount Iron, Wanaka. Built to soak up the sun and capture the mountain vistas this bespoke private chalet will be your base for adventure and/or pure relaxation. Nestled in a Kanuka glade, enjoy stargazing from the outdoor double bath and continue the stargazing in your plush bed with skylight above.
 
         Located on a quiet private road 5 minutes from central Wanaka this elevated chalet provides magnificent views and reconnects you with nature. Find refuge and be completely relaxed here, recharge ready for Wanaka’s adrenaline filled activities which are just minutes away. Walk out the door and its a mere 100m to the popular Mt Iron track, or bike down the hill and access one of the many interconnecting bike trails that Wanaka has to offer. Only 3 km from the Cabin and you can be on the shores of both Lake Wanaka and the Clutha River. You can immerse yourself in this beautiful arena that is Wanaka and Mount Aspiring National Park and then soak in a hot bath at the end of the day, stargaze and enjoy the privacy that Mount Iron Cabin has to offer. 
@@ -544,6 +654,141 @@ let objectArray = [
 // end of arrays
 // ===================================================================
 
+
+
+
+
+
+
+
+// ===================================================================
+// start of search function
+// ===================================================================
+
+function filterSearchWord(){
+
+    $('input[type=checkbox]').prop('checked', false);
+    console.log('clicked');
+    let searchWord = $('#searchWord').val();
+    console.log(searchWord);
+    filterByWord(searchWord);
+    $('input[name=search]').val('');
+
+    modal();
+};
+
+let word = searchWord;
+
+function filterByWord(word){
+    console.log(word);
+    $('#cardContent').empty();
+    let i,j;
+    for(i =0; i<objectArray.length; i++){
+        for(j = 0; j<objectArray[i].tags.length; j++){
+            
+            if(word.toLowerCase() === objectArray[i].tags[j]){
+                generateCard(i);
+                modal();
+            }
+        }
+    };
+    if(word === ''){
+        noInput();
+    };
+    modal();
+};
+
+function noInput(){
+    for(let i = 0; i < objectArray.length; i++){
+        generateCard(i);
+    }
+    modal();
+};
+
+// ===================================================================
+// end of search function
+// ===================================================================
+
+
+$('#sortBtn').change(function(){
+    let sortValue = ($('#sortBtn').val()).toLowerCase();
+    console.log(sortValue);
+    if((sortValue === 'name') || (sortValue === 'price')){
+        sortByAscending(sortValue);
+    }
+});
+
+function sortByAscending(sortOrder){
+
+        console.log(sortOrder);
+
+        objectArray.sort(function(a,b){
+
+            switch(sortOrder){
+                case 'name':
+                  let itemA = a.name.toLowerCase(), itemB = b.name.toLowerCase();
+                    break;
+                case 'price':
+                    console.log('price');
+                    let itemA = a.price.toLowerCase(), itemB = b.price.toLowerCase();
+                    break;
+                default:
+                    console.log('not matching');
+            };
+
+            if(itemA < itemB){
+                return -1;
+                // false
+            }
+            if(itemA > itemB){
+                return 1;
+                // true
+            }
+        });
+
+        console.log(objectArray);
+        allCards();
+        modal();
+};
+
+
+
+$('#refresh').click(function(){
+    console.log('#refresh')
+    $('#cardContent').empty();
+    $('input[type=checkbox]').prop('checked',false);
+    $('input[type=radio]').prop('checked',false);
+
+    objectArray.sort(function(a,b){
+        let itemA = a.id, itemB = b.id;
+
+        if(itemA < itemB){
+            return -1;
+            // false
+        }
+        if(itemA > itemB){
+            return 1;
+            // true
+        }
+        console.log(objectArray);
+
+    });
+
+
+    allCards();
+    modal();
+});
+
+
+
+function allCards(){
+    $('#cardContent').empty();
+    for(let i =0; i <objectArray.length; i++){
+        console.log(objectArray[i].title)
+
+        generateCard(i);
+    }
+};
 
 
 
@@ -680,10 +925,87 @@ function modal(){
             if(parseInt(this.id) === objectArray[i].id){
                 $("#modalHeader").empty().append(
                     `
-                    <h3 class="modal-header__title">${objectArray[i].name}</h3>
+                    <div class="modal-header__left">
+                        <h3 class="modal-header__title">${objectArray[i].name}</h3>
+                        <p class="modal-header__title-two">${objectArray[i].address}</p>
+                    </div>
+                    <div class="modal-header__right">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    `
+                )
+                $("#modalBody").empty().append(
+                    `
+                    <div class="modal-body__top">
+                        <div class="modal-carousel">
 
-                    <h3 class="modal-header__title">${objectArray[i].address}</h3>
 
+                            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                <img src="${objectArray[i].image}" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                <img src="${objectArray[i].imageTwo}" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                <img src="${objectArray[i].imageThree}" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                <img src="${objectArray[i].imageFour}" class="d-block w-100" alt="...">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                            </div>
+                        
+                        
+                        
+                        </div>
+                        <div class="modal-info">
+                            <p class="information-text">${objectArray[i].info}</p>
+                        </div>
+
+                    </div>
+
+                    <div class="checkmarks-top">
+
+                        <i class="fas fa-check"></i>
+                        <h5 class="checkmarks-text>${objectArray[i].wifi}</h5>
+
+                        <i class="fas fa-check"></i>
+                        <h5 class="checkmarks-text>${objectArray[i].bed}</h5>
+
+                        <i class="fas fa-check"></i>
+                        <h5 class="checkmarks-text>${objectArray[i].parking}</h5>
+
+                    </div>
+                    <div class="checkmarks-bottom">
+
+                        <i class="fas fa-check"></i>
+                        <h5 class="checkmarks-text>${objectArray[i].tv}</h5>
+
+                        <i class="fas fa-check"></i>
+                        <h5 class="checkmarks-text>${objectArray[i].bathroom}</h5>
+
+                        <i class="fas fa-check"></i>
+                        <h5 class="checkmarks-text>${objectArray[i].dinner}</h5>
+
+                    </div>
                     `
                 )
             }
@@ -740,3 +1062,4 @@ function generateCard(x){
 
 
 submitBtn.addEventListener('click', userSubmit);
+searchFilter.addEventListener("click", filterSearchWord)
