@@ -987,12 +987,29 @@ function displayOptions(nights, guests){
 }
 
 
+// ===================================================================
+// end of card displaying function
+// ===================================================================
+
+
+
+
 
 // ===================================================================
-// start of card displaying function
+// start of map function
 // ===================================================================
 
+function initMap(){
+    let area = {lat: objectArray[i].latitude, lng: objectArray[i].longitude};
+}
 
+const map = new google.maps.Map(document.getElementById('map'),{
+
+});
+
+// ===================================================================
+// end of map function
+// ===================================================================
 
 
 
@@ -1035,7 +1052,7 @@ function modal(){
                 )
                 $("#modalBody").empty().append(
                     `
-                    <div class="modal-body__top" container-fluid>
+                    <div class="modal-body__top container-fluid">
                         <div class="modal-carousel col-md-6">
 
 
@@ -1089,7 +1106,8 @@ function modal(){
                         ${objectArray[i].tick}
                         <h5 class="checkmarks-text>${objectArray[i].bed}</h5>
 
-                        ${objectArray[i].tick}                        <h5 class="checkmarks-text>${objectArray[i].parking}</h5>
+                        ${objectArray[i].tick}                        
+                        <h5 class="checkmarks-text>${objectArray[i].parking}</h5>
 
                     </div>
                     <div class="checkmarks-bottom">
@@ -1103,6 +1121,13 @@ function modal(){
                         ${objectArray[i].tick}                        
                         <h5 class="checkmarks-text>${objectArray[i].dinner}</h5>
 
+                    </div>
+
+                    <div class="modal-body__bottom container-fluid">
+                        <div class="map-container" id="mapContainer"></div>
+                        <div class="modal-form">
+                            <form></form>
+                        </div>
                     </div>
                     `
                 )
