@@ -1,46 +1,163 @@
-// .modal-content{
-//     height: 70vh;
-//     width: 70vw;
-// }
-
-
-.modal{
-    height: 70vh;
-    width: 70vw;
+.modal-dialog{
+    height: 50vh;
+    max-width: 70vw;
 }
 
 .modal-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    float: left;
-    font-family: "myFirstFont";
+
+    &__left{
+        font-family: "myFirstFont";
+        line-height: 1rem;
+        padding: 1rem;
+
+    }
+
+
+    &__name{
+        font-size: 3rem;
+    }
+
+    &__address{
+        font-size: 1.5rem;
+    }
+
+
+    &__middle{
+
+        display: flex;
+
+        &__icons{
+            padding-right: 1rem;
+            display: flex;
+
+            &__info{
+                padding-left: 0.5rem;
+            }
+
+        }
+
+    }
+
+    &__right{
+
+    }
+
 }
 
-.modal-header__title{
 
-}
-
-.modal-header__title-two{
-    font-size: 1.2rem;
-}
-
-.modal-header__left{
-    flex-direction: column;
+.fa-user-group, .fa-house-night{
+    padding-left: 0.5rem;
 }
 
 .modal-body__top{
     display: flex;
 }
 
-// .modal-carousel{
-//     height: 30vh;
-// }
+.modal-info{
 
-// .modal-dialog{
-//     width: 70vw;
-// }
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    &__text{
+        padding-top: 1rem;
+        font-size: 1.4rem;
+        width: 90%;
+    }
+
+}
+
+
+
 
 .checkmarks-top{
     display: flex;
 }
+
+.checkmarks-bottom{
+    display: flex;
+}
+
+// // .modal-content{
+// //     height: 70vh;
+// //     width: 70vw;
+// // }
+
+
+// .modal{
+//     height: 70vh;
+//     width: 70vw;
+// }
+
+// .modal-header{
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     float: left;
+//     font-family: "myFirstFont";
+// }
+
+
+
+// .modal-header__title{
+
+// }
+
+// .modal-header__title-two{
+//     font-size: 1.2rem;
+// }
+
+// .modal-header__elements{
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+// }
+
+// .modal-header__left{
+//     flex-direction: column;
+//     width: 48%;
+// }
+
+// .modal-header__middle{
+//     display: flex;
+//     width: 48%;
+// }
+
+// .modal-header__right{
+//     width: 4%;
+//     align-items: center;
+//     justify-content: center;
+// }
+
+// .modal-icons{
+//     padding-left: 1rem;
+//     padding-right: 1rem;
+//     display: flex;
+// }
+
+// .modal-body__top{
+//     display: flex;
+// }
+
+// // .modal-carousel{
+// //     height: 30vh;
+// // }
+
+// // .modal-dialog{
+// //     width: 70vw;
+// // }
+
+// .checkmarks-top{
+//     display: flex;
+// }
+
+// .fa-house-night{
+//     padding-right: 0.5rem;
+// }
+
+// .modal-header__info{
+//     padding-left: 0.5rem;
+// }

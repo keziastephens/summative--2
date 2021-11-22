@@ -53,7 +53,8 @@ a {
   font-size: 1.5rem;
   color: black;
   margin: 0.5rem;
-  padding-left: 0.3rem; }
+  padding-left: 0.3rem;
+  cursor: pointer; }
 
 .hamburger-menu {
   height: 35px;
@@ -94,7 +95,7 @@ a {
 .form {
   overflow: hidden;
   min-height: 70%;
-  width: 40%;
+  min-width: 45%;
   display: flex;
   align-items: center;
   position: absolute;
@@ -139,27 +140,47 @@ input[type="date"]::-webkit-datetime-edit-year-field {
 .submitBtn:hover {
   color: #d89a9a; }
 
-.modal {
-  height: 70vh;
-  width: 70vw; }
-
-.modal-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  float: left;
-  font-family: "myFirstFont"; }
-
-.modal-header__title-two {
-  font-size: 1.2rem; }
+.modal-dialog {
+  height: 50vh;
+  max-width: 70vw; }
 
 .modal-header__left {
-  flex-direction: column; }
+  font-family: "myFirstFont";
+  line-height: 1rem;
+  padding: 1rem; }
+.modal-header__name {
+  font-size: 3rem; }
+.modal-header__address {
+  font-size: 1.5rem; }
+.modal-header__middle {
+  display: flex; }
+  .modal-header__middle__icons {
+    padding-right: 1rem;
+    display: flex; }
+    .modal-header__middle__icons__info {
+      padding-left: 0.5rem; }
+
+.fa-user-group, .fa-house-night {
+  padding-left: 0.5rem; }
 
 .modal-body__top {
   display: flex; }
 
+.modal-info {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .modal-info__text {
+    padding-top: 1rem;
+    font-size: 1.4rem;
+    width: 90%; }
+
 .checkmarks-top {
+  display: flex; }
+
+.checkmarks-bottom {
   display: flex; }
 
 .footer {
@@ -214,7 +235,8 @@ input[type="date"]::-webkit-datetime-edit-year-field {
   min-width: 100%;
   background-size: cover;
   background-position: center;
-  border-radius: 2.8rem 2.8rem 0 0; }
+  border-radius: 2.8rem 2.8rem 0 0;
+  object-fit: cover; }
 
 .card-body {
   display: flex;
