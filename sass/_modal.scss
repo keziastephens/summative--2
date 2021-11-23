@@ -1,6 +1,7 @@
 .modal-dialog{
     height: 50vh;
     max-width: 70vw;
+    overflow-x: hidden;
 }
 
 .modal-header{
@@ -51,7 +52,9 @@
 
 }
 
-
+.modal-body{
+    overflow-x: hidden;
+}
 .fa-user-group, .fa-house-night{
     padding-left: 0.5rem;
 }
@@ -77,16 +80,46 @@
 
 }
 
-
-
-
-.checkmarks-top{
-    display: flex;
+.carousel-item{
+    max-height: 400px;
+    min-height: 400px;
 }
 
-.checkmarks-bottom{
-    display: flex;
+
+.fa-check{
+    font-size: 2rem;
 }
+
+
+
+.checkmarks{
+    min-height: 10vh;
+    width: 70vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: none;
+    background: yellow;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    &-individual{
+
+        padding: 2.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 3vh;
+        width: 20vw;
+        background: green;
+    }
+
+    &-text{
+        padding-left: 1rem;
+    }
+}
+
 
 // // .modal-content{
 // //     height: 70vh;

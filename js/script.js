@@ -994,18 +994,18 @@ function displayOptions(nights, guests){
 
 
 
-
+ 
 // ===================================================================
 // start of map function
 // ===================================================================
 
-function initMap(){
-    let area = {lat: objectArray[i].latitude, lng: objectArray[i].longitude};
-}
+// function initMap(){
+//     let area = {lat: objectArray[i].latitude, lng: objectArray[i].longitude};
+// }
 
-const map = new google.maps.Map(document.getElementById('map'),{
+// const map = new google.maps.Map(document.getElementById('map'),{
 
-});
+// });
 
 // ===================================================================
 // end of map function
@@ -1098,29 +1098,32 @@ function modal(){
 
                     </div>
 
-                    <div class="checkmarks-top">
+                    <div class="checkmarks">
 
-                        ${objectArray[i].tick}
-                        <h5 class="checkmarks-text>${objectArray[i].wifi}</h5>
-
-                        ${objectArray[i].tick}
-                        <h5 class="checkmarks-text>${objectArray[i].bed}</h5>
-
-                        ${objectArray[i].tick}                        
-                        <h5 class="checkmarks-text>${objectArray[i].parking}</h5>
-
-                    </div>
-                    <div class="checkmarks-bottom">
-
-                        ${objectArray[i].tick}                        
-                        <h5 class="checkmarks-text>${objectArray[i].tv}</h5>
-
-                        ${objectArray[i].tick}                        
-                        <h5 class="checkmarks-text>${objectArray[i].bathroom}</h5>
-
-                        ${objectArray[i].tick}                        
-                        <h5 class="checkmarks-text>${objectArray[i].dinner}</h5>
-
+                        <div class="checkmarks-individual">
+                            ${objectArray[i].tick}
+                            <h3 class="checkmarks-text">${objectArray[i].wifi}</h3>
+                        </div>
+                        <div class="checkmarks-individual">
+                            ${objectArray[i].tick}
+                            <h3 class="checkmarks-text">${objectArray[i].bed}</h3>
+                        </div>
+                        <div class="checkmarks-individual">
+                            ${objectArray[i].tick}                        
+                            <h3 class="checkmarks-text">${objectArray[i].parking}</h3>
+                        </div>
+                        <div class="checkmarks-individual">
+                            ${objectArray[i].tick}                        
+                            <h3 class="checkmarks-text">${objectArray[i].tv}</h3>
+                        </div>
+                        <div class="checkmarks-individual">
+                            ${objectArray[i].tick}                        
+                            <h3 class="checkmarks-text">${objectArray[i].bathroom}</h3>
+                        </div>
+                        <div class="checkmarks-individual">
+                            ${objectArray[i].tick}                        
+                            <h3 class="checkmarks-text">${objectArray[i].dinner}</h3>
+                        </div>
                     </div>
 
                     <div class="modal-body__bottom container-fluid">

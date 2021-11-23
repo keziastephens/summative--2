@@ -142,23 +142,37 @@ input[type="date"]::-webkit-datetime-edit-year-field {
 
 .modal-dialog {
   height: 50vh;
-  max-width: 70vw; }
+  max-width: 70vw;
+  overflow-x: hidden; }
 
-.modal-header__left {
-  font-family: "myFirstFont";
-  line-height: 1rem;
-  padding: 1rem; }
-.modal-header__name {
-  font-size: 3rem; }
-.modal-header__address {
-  font-size: 1.5rem; }
-.modal-header__middle {
-  display: flex; }
-  .modal-header__middle__icons {
-    padding-right: 1rem;
-    display: flex; }
-    .modal-header__middle__icons__info {
-      padding-left: 0.5rem; }
+.modal-header {
+  height: 8rem;
+  width: 100%; }
+  .modal-header__left {
+    font-family: "myFirstFont";
+    line-height: 1rem;
+    padding: 1rem;
+    height: 100%;
+    width: 48%; }
+  .modal-header__name {
+    font-size: 3rem; }
+  .modal-header__address {
+    font-size: 1.5rem; }
+  .modal-header__middle {
+    display: flex;
+    height: 100%;
+    width: 48%; }
+    .modal-header__middle__icons {
+      padding-right: 1rem;
+      display: flex; }
+      .modal-header__middle__icons__info {
+        padding-left: 0.5rem; }
+  .modal-header__right {
+    height: 100%;
+    width: 4%; }
+
+.modal-body {
+  overflow-x: hidden; }
 
 .fa-user-group, .fa-house-night {
   padding-left: 0.5rem; }
@@ -177,11 +191,34 @@ input[type="date"]::-webkit-datetime-edit-year-field {
     font-size: 1.4rem;
     width: 90%; }
 
-.checkmarks-top {
-  display: flex; }
+.carousel-item {
+  max-height: 400px;
+  min-height: 400px; }
 
-.checkmarks-bottom {
-  display: flex; }
+.fa-check {
+  font-size: 2rem; }
+
+.checkmarks {
+  min-height: 10vh;
+  width: 70vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: none;
+  background: yellow;
+  padding-top: 2rem;
+  padding-bottom: 2rem; }
+  .checkmarks-individual {
+    padding: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3vh;
+    width: 20vw;
+    background: green; }
+  .checkmarks-text {
+    padding-left: 1rem; }
 
 .footer {
   background: black;
