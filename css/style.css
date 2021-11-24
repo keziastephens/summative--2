@@ -141,12 +141,12 @@ input[type="date"]::-webkit-datetime-edit-year-field {
   color: #d89a9a; }
 
 .modal-dialog {
-  height: 50vh;
+  max-height: 50vh;
   max-width: 70vw;
   overflow-x: hidden; }
 
 .modal-header {
-  height: 8rem;
+  height: 20%;
   width: 100%; }
   .modal-header__left {
     font-family: "myFirstFont";
@@ -161,15 +161,29 @@ input[type="date"]::-webkit-datetime-edit-year-field {
   .modal-header__middle {
     display: flex;
     height: 100%;
-    width: 48%; }
-    .modal-header__middle__icons {
-      padding-right: 1rem;
-      display: flex; }
-      .modal-header__middle__icons__info {
-        padding-left: 0.5rem; }
+    width: 48%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; }
+  .modal-header__icons {
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: row; }
   .modal-header__right {
     height: 100%;
     width: 4%; }
+
+.modal-carousel {
+  height: 40vh; }
+
+.modal-header__info {
+  padding-left: 1rem; }
+
+.fa-cloud-moon {
+  font-size: 2rem; }
+
+.fa-user-group {
+  font-size: 2rem; }
 
 .modal-body {
   overflow-x: hidden; }
@@ -188,12 +202,11 @@ input[type="date"]::-webkit-datetime-edit-year-field {
   align-items: center; }
   .modal-info__text {
     padding-top: 1rem;
-    font-size: 1.4rem;
+    font-size: 2rem;
     width: 90%; }
 
 .carousel-item {
-  max-height: 400px;
-  min-height: 400px; }
+  min-height: 600px; }
 
 .fa-check {
   font-size: 2rem; }
@@ -202,9 +215,9 @@ input[type="date"]::-webkit-datetime-edit-year-field {
   min-height: 10vh;
   width: 70vw;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   margin: none;
   background: yellow;
   padding-top: 2rem;
@@ -219,6 +232,24 @@ input[type="date"]::-webkit-datetime-edit-year-field {
     background: green; }
   .checkmarks-text {
     padding-left: 1rem; }
+
+.modal-body__bottom {
+  min-height: 40vh;
+  width: 70vw;
+  display: flex;
+  flex-wrap: wrap; }
+
+.map-container {
+  height: 40vh;
+  width: 50%;
+  background: chocolate;
+  display: flex; }
+
+.modal-form {
+  height: 40vh;
+  width: 50%;
+  background: #75470f;
+  display: flex; }
 
 .footer {
   background: black;

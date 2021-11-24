@@ -81,13 +81,13 @@
             <div class="form-item">
               <label for="locationSelect">location</label>
               <select name="locationSelect" id="selectedLocation" class="form-input__location">
+                <option value="selectLocation" disabled selected hidden>Select your location</option>
                 <option value="1">Hanmer Springs</option>
                 <option value="2">Mt Hutt</option>
                 <option value="3">Queenstown</option>
                 <option value="4">Taupo</option>
                 <option value="5">Wanaka</option>
-            </select>
-              <i class="fas fa-map-marker-alt"></i>
+              </select>
             </div>
 
             <div class="form-item">
@@ -101,7 +101,7 @@
             </div>
     
             <div class="form-item">
-                <label for="numberOfPeople">number of people</label>
+                <label for="numberOfPeople">no. of people</label>
                 <select name="numberOfPeople" id="valueOfPeople" class="form-input__people">
                     <option value="1">one</option>
                     <option value="2">two</option>
@@ -179,7 +179,8 @@
     <img class="tnz-logo" src="./img/TNZ_logo.png" alt="tourism new zealand logo">
   </footer>
 
-
+    <!-- use downloaded jquery minified version for goole maps to work -->
+    <script src="./jquery-3.5.1.min.js"></script>
 
     <!-- script jquery ui -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous"></script>
@@ -206,6 +207,8 @@
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 
 
+    <!-- map key script -->
+    <script src="./js/mapKey.js"></script>
     <!-- local js file -->
     <script src="./js/script.js"></script>
   </body>
