@@ -206,7 +206,11 @@ input[type="date"]::-webkit-datetime-edit-year-field {
     width: 90%; }
 
 .carousel-item {
-  min-height: 600px; }
+  min-height: 600px;
+  max-height: 600px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; }
 
 .fa-check {
   font-size: 2rem; }
@@ -242,13 +246,11 @@ input[type="date"]::-webkit-datetime-edit-year-field {
 .map-container {
   height: 40vh;
   width: 50%;
-  background: chocolate;
   display: flex; }
 
 .modal-form {
   height: 40vh;
   width: 50%;
-  background: #75470f;
   display: flex; }
 
 .footer {

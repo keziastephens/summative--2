@@ -1,6 +1,15 @@
 console.log('linked');
 
 
+
+let script = '<script src="https://maps.googleapis.com/maps/api/js?key=' + key +'&callback=initMap&libraries=places&v=weekly" async defer >';
+
+
+$(document).ready(function(){
+    $('body').append(script);
+})
+
+
 // ===================================================================
 // start of query selectors
 // ===================================================================
@@ -47,12 +56,12 @@ let objectArray = [
         bathroom: 'Own bathroom',
         dinner: 'Offers dinner meals',
         offersDinner: 'yes', 
-        image: '../img/hotels/hanmer-01.jpg',
-        imageTwo: '../img/hotels/hanmer-02.jpg',
-        imageThree: '../img/hotels/hanmer-03.jpg',
-        imageFour: '../img/hotels/hanmer-04.jpg',
-        imageFive: '../img/hotels/hanmer-05.jpg',
-        imageSix: '../img/hotels/hanmer-06.jpeg',
+        image: './img/hotels/hanmer-01.jpg',
+        imageTwo: './img/hotels/hanmer-02.jpg',
+        imageThree: './img/hotels/hanmer-03.jpg',
+        imageFour: './img/hotels/hanmer-04.jpg',
+        imageFive: './img/hotels/hanmer-05.jpg',
+        imageSix: './img/hotels/hanmer-06.jpeg',
         longitude: -42.520532551319555,
         latitude: 172.83025672678912,
         tick: '<i class="fas fa-check"></i>',
@@ -93,12 +102,12 @@ let objectArray = [
         bathroom: 'Shared bathroom',
         dinner: 'Shared kitchen',
         offersDinner: 'no', 
-        image: '../img/hostels/kakapo-01.jpg',
-        imageTwo: '../img/hostels/kakapo-02.jpg',
-        imageThree: '../img/hostels/kakapo-03.jpg',
-        imageFour: '../img/hostels/kakapo-04.jpg',
-        imageFive: '../img/hostels/kakapo-05.jpg',
-        imageSix: '../img/hostels/kakapo-06.jpg',
+        image: './img/hostels/kakapo-01.jpg',
+        imageTwo: './img/hostels/kakapo-02.jpg',
+        imageThree: './img/hostels/kakapo-03.jpg',
+        imageFour: './img/hostels/kakapo-04.jpg',
+        imageFive: './img/hostels/kakapo-05.jpg',
+        imageSix: './img/hostels/kakapo-06.jpg',
         longitude: -42.525790748940395,
         latitude: 172.82850799795324,
         tick: '<i class="fas fa-check"></i>',
@@ -133,12 +142,12 @@ let objectArray = [
         bathroom: 'Own bathroom',
         dinner: 'Small kitchen area',
         offersDinner: 'no', 
-        image: '../img/motels/chalets-01.jpg',
-        imageTwo: '../img/motels/chalets-02.jpg',
-        imageThree: '../img/motels/chalets-03.jpg',
-        imageFour: '../img/motels/chalets-04.jpg',
-        imageFive: '../img/motels/chalets-05.jpg',
-        imageSix: '../img/motels/chalets-06.jpg',
+        image: './img/motels/chalets-01.jpg',
+        imageTwo: './img/motels/chalets-02.jpg',
+        imageThree: './img/motels/chalets-03.jpg',
+        imageFour: './img/motels/chalets-04.jpg',
+        imageFive: './img/motels/chalets-05.jpg',
+        imageSix: './img/motels/chalets-06.jpg',
         longitude: -42.51871342418204,
         latitude: 172.824080697953,
         tick: '<i class="fas fa-check"></i>',
@@ -173,12 +182,12 @@ let objectArray = [
         bathroom: 'Large bathroom',
         dinner: 'Large kitchen area',
         offersDinner: 'no', 
-        image: '../img/houses/riverview-01.jpeg',
-        imageTwo: '../img/houses/riverview-02.jpg',
-        imageThree: '../img/houses/riverview-03.jpg',
-        imageFour: '../img/houses/riverview-04.jpg',
-        imageFive: '../img/houses/riverview-05.jpg',
-        imageSix: '../img/houses/riverview-06.jpg',
+        image: './img/houses/riverview-01.jpeg',
+        imageTwo: './img/houses/riverview-02.jpg',
+        imageThree: './img/houses/riverview-03.jpg',
+        imageFour: './img/houses/riverview-04.jpg',
+        imageFive: './img/houses/riverview-05.jpg',
+        imageSix: './img/houses/riverview-06.jpg',
         longitude: -42.58037366550216,
         latitude: 172.78424810322687,
         tick: '<i class="fas fa-check"></i>',
@@ -223,12 +232,12 @@ let objectArray = [
         bathroom: 'Large bathroom',
         dinner: 'Offers dinner meals',
         offersDinner: 'yes', 
-        image: '../img/hotels/terrace-01.jpg',
-        imageTwo: '../img/hotels/terrace-02.jpg',
-        imageThree: '../img/hotels/terrace-03.jpg',
-        imageFour: '../img/hotels/terrace-04.jpg',
-        imageFive: '../img/hotels/terrace-05.jpg',
-        imageSix: '../img/hotels/terrace-06.jpg',
+        image: './img/hotels/terrace-01.jpg',
+        imageTwo: './img/hotels/terrace-02.jpg',
+        imageThree: './img/hotels/terrace-03.jpg',
+        imageFour: './img/hotels/terrace-04.jpg',
+        imageFive: './img/hotels/terrace-05.jpg',
+        imageSix: './img/hotels/terrace-06.jpg',
         longitude: -43.49897589664995,
         latitude: 171.6491313044863,
         tick: '<i class="fas fa-check"></i>',
@@ -266,12 +275,12 @@ let objectArray = [
         bathroom: 'Own bathroom',
         dinner: 'Offers dinner meals',
         offersDinner: 'yes', 
-        image: '../img/hostels/tree-01.jpg',
-        imageTwo: '../img/hostels/tree-02.jpg',
-        imageThree: '../img/hostels/tree-03.jpg',
-        imageFour: '../img/hostels/tree-04.jpg',
-        imageFive: '../img/hostels/tree-05.jpg',
-        imageSix: '../img/hostels/tree-06.jpg',
+        image: './img/hostels/tree-01.jpg',
+        imageTwo: './img/hostels/tree-02.jpg',
+        imageThree: './img/hostels/tree-03.jpg',
+        imageFour: './img/hostels/tree-04.jpg',
+        imageFive: './img/hostels/tree-05.jpg',
+        imageSix: './img/hostels/tree-06.jpg',
         longitude: -43.63581876794095,
         latitude: 171.64346558928645,
         tick: '<i class="fas fa-check"></i>',
@@ -309,12 +318,12 @@ let objectArray = [
         bathroom: 'Own bathroom',
         dinner: 'Small kitchen',
         offersDinner: 'no', 
-        image: '../img/motels/mthutt-01.jpg',
-        imageTwo: '../img/motels/mthutt-02.jpg',
-        imageThree: '../img/motels/mthutt-03.jpg',
-        imageFour: '../img/motels/mthutt-04.jpg',
-        imageFive: '../img/motels/mthutt-05.jpg',
-        imageSix: '../img/motels/mthutt-06.jpg',
+        image: './img/motels/mthutt-01.jpg',
+        imageTwo: './img/motels/mthutt-02.jpg',
+        imageThree: './img/motels/mthutt-03.jpg',
+        imageFour: './img/motels/mthutt-04.jpg',
+        imageFive: './img/motels/mthutt-05.jpg',
+        imageSix: './img/motels/mthutt-06.jpg',
         longitude: -43.62738085963577,
         latitude: 171.64752576915285,
         tick: '<i class="fas fa-check"></i>',
@@ -352,12 +361,12 @@ let objectArray = [
         bathroom: 'Own bathroom',
         dinner: 'Large kitchen',
         offersDinner: 'no', 
-        image: '../img/houses/montrose-01.jpg',
-        imageTwo: '../img/houses/montrose-02.jpg',
-        imageThree: '../img/houses/montrose-03.jpg',
-        imageFour: '../img/houses/montrose-04.jpg',
-        imageFive: '../img/houses/montrose-05.jpg',
-        imageSix: '../img/houses/montrose-06.jpg',
+        image: './img/houses/montrose-01.jpg',
+        imageTwo: './img/houses/montrose-02.jpg',
+        imageThree: './img/houses/montrose-03.jpg',
+        imageFour: './img/houses/montrose-04.jpg',
+        imageFive: './img/houses/montrose-05.jpg',
+        imageSix: './img/houses/montrose-06.jpg',
         longitude: -43.47687674722087,
         latitude: 171.5891827539711,
         tick: '<i class="fas fa-check"></i>',
@@ -401,12 +410,12 @@ let objectArray = [
         bathroom: 'Own bathroom',
         dinner: 'Offers dinner meals',
         offersDinner: 'yes', 
-        image: '../img/hotels/heritage-01.jpg',
-        imageTwo: '../img/hotels/heritage-02.jpg',
-        imageThree: '../img/hotels/heritage-03.jpg',
-        imageFour: '../img/hotels/heritage-04.jpg',
-        imageFive: '../img/hotels/heritage-05.jpg',
-        imageSix: '../img/hotels/heritage-06.jpg',
+        image: './img/hotels/heritage-01.jpg',
+        imageTwo: './img/hotels/heritage-02.jpg',
+        imageThree: './img/hotels/heritage-03.jpg',
+        imageFour: './img/hotels/heritage-04.jpg',
+        imageFive: './img/hotels/heritage-05.jpg',
+        imageSix: './img/hotels/heritage-06.jpg',
         longitude: -45.03705503488247, 
         latitude: 168.64221621662745,
         tick: '<i class="fas fa-check"></i>',
@@ -444,12 +453,12 @@ let objectArray = [
         bathroom: 'Shared bathroom',
         dinner: 'Shared kitchen',
         offersDinner: 'no', 
-        image: '../img/hostels/adventure-01.jpeg',
-        imageTwo: '../img/hostels/adventure-02.jpeg',
-        imageThree: '../img/hostels/adventure-03.jpeg',
-        imageFour: '../img/hostels/adventure-04.jpeg',
-        imageFive: '../img/hostels/adventure-05.jpeg',
-        imageSix: '../img/hostels/adventure-06.jpg',
+        image: './img/hostels/adventure-01.jpeg',
+        imageTwo: './img/hostels/adventure-02.jpeg',
+        imageThree: './img/hostels/adventure-03.jpeg',
+        imageFour: './img/hostels/adventure-04.jpeg',
+        imageFive: './img/hostels/adventure-05.jpeg',
+        imageSix: './img/hostels/adventure-06.jpg',
         longitude: -45.03109706843424, 
         latitude: 168.6607642700365,
         tick: '<i class="fas fa-check"></i>',
@@ -484,12 +493,12 @@ let objectArray = [
         bathroom: 'Own bathroom',
         dinner: 'Small kitchen',
         offersDinner: 'no', 
-        image: '../img/motels/colonial-01.jpg',
-        imageTwo: '../img/motels/colonial-02.jpg',
-        imageThree: '../img/motels/colonial-03.jpg',
-        imageFour: '../img/motels/colonial-04.jpg',
-        imageFive: '../img/motels/colonial-05.jpg',
-        imageSix: '../img/motels/colonial-06.jpg',
+        image: './img/motels/colonial-01.jpg',
+        imageTwo: './img/motels/colonial-02.jpg',
+        imageThree: './img/motels/colonial-03.jpg',
+        imageFour: './img/motels/colonial-04.jpg',
+        imageFive: './img/motels/colonial-05.jpg',
+        imageSix: './img/motels/colonial-06.jpg',
         longitude: -45.033658410996054,
         latitude: 168.67620516931336,
         tick: '<i class="fas fa-check"></i>',
@@ -527,12 +536,12 @@ let objectArray = [
         bathroom: 'Own bathroom',
         dinner: 'Large kitchen',
         offersDinner: 'no', 
-        image: '../img/houses/modbox-01.jpg',
-        imageTwo: '../img/houses/modbox-02.jpg',
-        imageThree: '../img/houses/modbox-03.jpg',
-        imageFour: '../img/houses/modbox-04.jpg',
-        imageFive: '../img/houses/modbox-05.jpg',
-        imageSix: '../img/houses/modbox-06.jpg',
+        image: './img/houses/modbox-01.jpg',
+        imageTwo: './img/houses/modbox-02.jpg',
+        imageThree: './img/houses/modbox-03.jpg',
+        imageFour: './img/houses/modbox-04.jpg',
+        imageFive: './img/houses/modbox-05.jpg',
+        imageSix: './img/houses/modbox-06.jpg',
         longitude: -45.01925336056335, 
         latitude: 168.70922560639272,
         tick: '<i class="fas fa-check"></i>',
@@ -590,12 +599,12 @@ let objectArray = [
         bathroom: 'Own bathroom',
         dinner: 'Offers dinner meals',
         offersDinner: 'yes', 
-        image: '../img/hotels/edgewater-01.jpg',
-        imageTwo: '../img/hotels/edgewater-02.jpg',
-        imageThree: '../img/hotels/edgewater-03.jpg',
-        imageFour: '../img/hotels/edgewater-04.jpg',
-        imageFive: '../img/hotels/edgewater-05.jpg',
-        imageSix: '../img/hotels/edgewater-06.jpg',
+        image: './img/hotels/edgewater-01.jpg',
+        imageTwo: './img/hotels/edgewater-02.jpg',
+        imageThree: './img/hotels/edgewater-03.jpg',
+        imageFour: './img/hotels/edgewater-04.jpg',
+        imageFive: './img/hotels/edgewater-05.jpg',
+        imageSix: './img/hotels/edgewater-06.jpg',
         longitude: -44.69409967568055, 
         latitude: 169.11240812698765,
         tick: '<i class="fas fa-check"></i>',
@@ -630,12 +639,12 @@ let objectArray = [
         bathroom: 'Shared bathroom',
         dinner: 'Shared kitchen',
         offersDinner: 'no', 
-        image: '../img/hostels/bakpaka-01.jpg',
-        imageTwo: '../img/hostels/bakpaka-02.jpg',
-        imageThree: '../img/hostels/bakpaka-03.jpg',
-        imageFour: '../img/hostels/bakpaka-04.jpg',
-        imageFive: '../img/hostels/bakpaka-05.jpg',
-        imageSix: '../img/hostels/bakpaka-06.jpg',
+        image: './img/hostels/bakpaka-01.jpg',
+        imageTwo: './img/hostels/bakpaka-02.jpg',
+        imageThree: './img/hostels/bakpaka-03.jpg',
+        imageFour: './img/hostels/bakpaka-04.jpg',
+        imageFive: './img/hostels/bakpaka-05.jpg',
+        imageSix: './img/hostels/bakpaka-06.jpg',
         longitude: -44.68901414566924,
         latitude: 169.1323944380868,
         tick: '<i class="fas fa-check"></i>',
@@ -664,12 +673,12 @@ let objectArray = [
         bathroom: 'Shared bathroom',
         dinner: 'Shared kitchen',
         offersDinner: 'no', 
-        image: '../img/motels/aspiring-01.jpg',
-        imageTwo: '../img/motels/aspiring-02.jpg',
-        imageThree: '../img/motels/aspiring-03.jpg',
-        imageFour: '../img/motels/aspiring-04.jpg',
-        imageFive: '../img/motels/aspiring-05.jpg',
-        imageSix: '../img/motels/aspiring-06.jpg',
+        image: './img/motels/aspiring-01.jpg',
+        imageTwo: './img/motels/aspiring-02.jpg',
+        imageThree: './img/motels/aspiring-03.jpg',
+        imageFour: './img/motels/aspiring-04.jpg',
+        imageFive: './img/motels/aspiring-05.jpg',
+        imageSix: './img/motels/aspiring-06.jpg',
         longitude: -45.033658410996054,
         latitude: 168.67620516931336,
         tick: '<i class="fas fa-check"></i>',
@@ -710,12 +719,12 @@ let objectArray = [
         bathroom: 'Own bathroom',
         dinner: 'Large kitchen',
         offersDinner: 'no', 
-        image: '../img/houses/iron-01.jpg',
-        imageTwo: '../img/houses/iron-02.jpg',
-        imageThree: '../img/houses/iron-03.jpg',
-        imageFour: '../img/houses/iron-04.jpg',
-        imageFive: '../img/houses/iron-05.jpg',
-        imageSix: '../img/houses/iron-06.jpg',
+        image: './img/houses/iron-01.jpg',
+        imageTwo: './img/houses/iron-02.jpg',
+        imageThree: './img/houses/iron-03.jpg',
+        imageFour: './img/houses/iron-04.jpg',
+        imageFive: './img/houses/iron-05.jpg',
+        imageSix: './img/houses/iron-06.jpg',
         longitude: -44.68377088552741,
         latitude: 169.16160126931402,
         tick: '<i class="fas fa-check"></i>',
@@ -742,6 +751,26 @@ let objectArray = [
 
 
 
+// ===================================================================
+// start of map function
+// ===================================================================
+
+
+function initMap(){
+    let newZealand = {lat: -39.72496035524508, lng: 175.58280932991102};
+    
+    const map = new google.maps.Map(document.getElementById('mapContainer'),{
+        zoom: 5,
+        center: newZealand
+    });
+
+
+}
+
+
+// ===================================================================
+// end of map function
+// ===================================================================
 
 
 
@@ -886,79 +915,78 @@ function noInput(){
 // ===================================================================
 
 
-function userSubmit(event){
-    event.preventDefault();
-    
-    let months = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
-    let msDay = 1000 * 3600 * 24;
-
-    
-    const checkInDate = new Date($('#checkInDate').val());
-    const checkOutDate = new Date($('#checkOutDate').val());
-    console.log(checkInDate);
-
-    
-    let checkInDay = checkInDate.getDate(),
-        checkInMonth = checkInDate.getMonth(),
-        checkInYear = checkInDate.getFullYear(),
-        checkOutDay = checkOutDate.getDate(),
-        checkOutMonth = checkOutDate.getMonth(),
-        checkOutYear = checkOutDate.getFullYear();
-
-
-    let checkInDetails = [checkInDay,checkInMonth,checkInYear].join('/');
-    let checkOutDetails = [checkOutDay,checkOutMonth,checkOutYear].join('/');
-    console.log(checkInDetails);
-    console.log(checkOutDetails);
-    console.log(checkInDate, checkOutDate);
-
-
-    if ( (checkInDate == 'Invalid Date') || (checkOutDate == 'Invalid Date') ){
-        alert('Please enter check in and check out dates');
-    } else if( checkInDate.getTime() >= checkOutDate.getTime() ){
-        alert('check out day cant be before check in date');
-    } else{
-        $('#introPage').hide(); 
-        $('#acommodationContainer').show();
-    }
-
-
-   let difference = checkOutDate.getTime() - checkInDate.getTime();
-   console.log(difference);
-
-   let dayDifference = difference/msDay;
-   console.log(dayDifference);
-
-   let valueOfPeople = ($("#valueOfPeople").val());
-   console.log(valueOfPeople);
-
-   displayOptions(dayDifference, valueOfPeople);
-
-};
-
 // function userSubmit(event){
-//     $("#checkInDate").datepicker({
-//         dateFormat: "dd-mm-yy",
-//         changeMonth: true,
-//         minDate: new Date(),
-//         maxDate: "+1y",
-//         onSelect: function(date){
-//             let selectDate = new Date(date);
-//             let msInADay = 86400000;
-//             let stDate = new Date(selectDate.getTime() + msInADay);
+//     event.preventDefault();
+    
+//     let months = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
+//     let msDay = 1000 * 3600 * 24;
 
-//             $('#checkOutDate').datepicker('option', 'minDate', stDate);
-//             let endDate = new Date(selectDate.getTime() + 15 * msInADay)
+    
+//     const checkInDate = new Date($('#checkInDate').val());
+//     const checkOutDate = new Date($('#checkOutDate').val());
+//     console.log(checkInDate);
 
-//             $('#checkOutDate').datepicker('option', 'maxDate', endDate)
-//         }
-//     });
+    
+//     let checkInDay = checkInDate.getDate(),
+//         checkInMonth = checkInDate.getMonth(),
+//         checkInYear = checkInDate.getFullYear(),
+//         checkOutDay = checkOutDate.getDate(),
+//         checkOutMonth = checkOutDate.getMonth(),
+//         checkOutYear = checkOutDate.getFullYear();
 
-//     $("#checkOutDate").datepicker({
-//         dateFormat: 'dd-mm-yy',
-//         changeMonth: true
-//     });
-// }
+
+//     let checkInDetails = [checkInDay,checkInMonth,checkInYear].join('/');
+//     let checkOutDetails = [checkOutDay,checkOutMonth,checkOutYear].join('/');
+//     console.log(checkInDetails);
+//     console.log(checkOutDetails);
+//     console.log(checkInDate, checkOutDate);
+
+
+//     if ( (checkInDate == 'Invalid Date') || (checkOutDate == 'Invalid Date') ){
+//         alert('Please enter check in and check out dates');
+//     } else if( checkInDate.getTime() >= checkOutDate.getTime() ){
+//         alert('check out day cant be before check in date');
+//     } else{
+//         $('#introPage').hide(); 
+//         $('#acommodationContainer').show();
+//     }
+
+
+//    let difference = checkOutDate.getTime() - checkInDate.getTime();
+//    console.log(difference);
+
+//    let dayDifference = difference/msDay;
+//    console.log(dayDifference);
+
+//    let valueOfPeople = ($("#valueOfPeople").val());
+//    console.log(valueOfPeople);
+
+//    displayOptions(dayDifference, valueOfPeople);
+// };
+
+function userSubmit(event){
+    $("#checkInDate").datepicker({
+        dateFormat: "dd-mm-yy",
+        changeMonth: true,
+        minDate: new Date(),
+        maxDate: "+1y",
+        onSelect: function(date){
+            let selectDate = new Date(date);
+            let msInADay = 86400000;
+            let stDate = new Date(selectDate.getTime() + msInADay);
+
+            $('#checkOutDate').datepicker('option', 'minDate', stDate);
+            let endDate = new Date(selectDate.getTime() + 15 * msInADay)
+
+            $('#checkOutDate').datepicker('option', 'maxDate', endDate)
+        }
+    });
+
+    $("#checkOutDate").datepicker({
+        dateFormat: 'dd-mm-yy',
+        changeMonth: true
+    });
+}
 
 
 
@@ -981,6 +1009,8 @@ function displayOptions(nights, guests){
     for(let i = 0; i < objectArray.length; i++){
         if( ((nights >= objectArray[i].minNight) && (nights <= objectArray[i].maxNight) && (guests >= objectArray[i].minPeople) && (guests <= objectArray[i].maxPeople)) ){
             generateCard(i)
+            
+            let location = {lat: objectArray[i].latitude, lng: objectArray[i].longitude};
         };
     }
     // modal();
@@ -995,30 +1025,6 @@ function displayOptions(nights, guests){
 
 
  
-// ===================================================================
-// start of map function
-// ===================================================================
-
-
-let script = '<script src="https://maps.googleapis.com/maps/api/js?key=' + key +'&callback=initMap&libraries=places&v=weekly" async defer >';
-
-
-$(document).ready(function(){
-    $('body').append(script);
-})
-
-
-// function initMap(){
-//     let area = {lat: objectArray[i].latitude, lng: objectArray[i].longitude};
-// }
-
-// const map = new google.maps.Map(document.getElementById('map'),{
-
-// });
-
-// ===================================================================
-// end of map function
-// ===================================================================
 
 
 
@@ -1136,7 +1142,7 @@ function modal(){
                     </div>
 
                     <div class="modal-body__bottom container-fluid">
-                        <div class="map-container" id="mapContainer"></div>
+                        
                         <div class="modal-form">
                             <form></form>
                         </div>
