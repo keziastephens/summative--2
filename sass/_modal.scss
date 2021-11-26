@@ -10,7 +10,7 @@
     width: 100%;
 
     &__left{
-        font-family: "myFirstFont";
+        font-family: "nationalRegular";
         line-height: 1rem;
         padding: 1rem;
         height: 100%;
@@ -148,7 +148,7 @@
 .map-container{
     height: 40vh;
     width: 50%;
-
+    background: yellowgreen;
     display: flex;
 }
 

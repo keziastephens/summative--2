@@ -1,13 +1,59 @@
 console.log('linked');
 
 
-
 let script = '<script src="https://maps.googleapis.com/maps/api/js?key=' + key +'&callback=initMap&libraries=places&v=weekly" async defer >';
 
+let checkInDate,checkOutDate;
+function initMap(){
+    let newZealand = {lat: -39.72496035524508, lng: 175.58280932991102};
+        $("#checkInDate").datepicker({
+        dateFormat: "dd-mm-yy",
+        changeMonth: true,
+        minDate: new Date(),
+        maxDate: "+1y",
+        onSelect: function(date){
+            let selectDate = new Date(date);
+            let msInADay = 86400000;
+            let stDate = new Date(selectDate.getTime() + msInADay);
+
+            $('#checkOutDate').datepicker('option', 'minDate', stDate);
+            let endDate = new Date(selectDate.getTime() + 15 * msInADay)
+
+            $('#checkOutDate').datepicker('option', 'maxDate', endDate)
+            console.log(date)
+            checkInDate = date;
+        }
+    });
+
+    $("#checkOutDate").datepicker({
+        dateFormat: 'dd-mm-yy',
+        changeMonth: true,
+        onSelect: function(date){
+            let selectDate = new Date(date);
+            let msInADay = 86400000;
+            let stDate = new Date(selectDate.getTime() + msInADay);
+
+            // $('#checkOutDate').datepicker('option', 'minDate', stDate);
+            // let endDate = new Date(selectDate.getTime() + 15 * msInADay)
+
+            // $('#checkOutDate').datepicker('option', 'maxDate', endDate)
+            console.log(date)
+            checkOutDate = date
+        }
+    });
+    const map = new google.maps.Map(document.getElementById('mapContainer'),{
+        zoom: 5,
+        center: newZealand
+    });
+
+
+}
 
 $(document).ready(function(){
     $('body').append(script);
-})
+// })
+
+
 
 
 // ===================================================================
@@ -749,23 +795,10 @@ let objectArray = [
 // end of arrays
 // ===================================================================
 
-
-
 // ===================================================================
 // start of map function
 // ===================================================================
 
-
-function initMap(){
-    let newZealand = {lat: -39.72496035524508, lng: 175.58280932991102};
-    
-    const map = new google.maps.Map(document.getElementById('mapContainer'),{
-        zoom: 5,
-        center: newZealand
-    });
-
-
-}
 
 
 // ===================================================================
@@ -915,78 +948,61 @@ function noInput(){
 // ===================================================================
 
 
-// function userSubmit(event){
-//     event.preventDefault();
-    
-//     let months = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
-//     let msDay = 1000 * 3600 * 24;
-
-    
-//     const checkInDate = new Date($('#checkInDate').val());
-//     const checkOutDate = new Date($('#checkOutDate').val());
-//     console.log(checkInDate);
-
-    
-//     let checkInDay = checkInDate.getDate(),
-//         checkInMonth = checkInDate.getMonth(),
-//         checkInYear = checkInDate.getFullYear(),
-//         checkOutDay = checkOutDate.getDate(),
-//         checkOutMonth = checkOutDate.getMonth(),
-//         checkOutYear = checkOutDate.getFullYear();
-
-
-//     let checkInDetails = [checkInDay,checkInMonth,checkInYear].join('/');
-//     let checkOutDetails = [checkOutDay,checkOutMonth,checkOutYear].join('/');
-//     console.log(checkInDetails);
-//     console.log(checkOutDetails);
-//     console.log(checkInDate, checkOutDate);
-
-
-//     if ( (checkInDate == 'Invalid Date') || (checkOutDate == 'Invalid Date') ){
-//         alert('Please enter check in and check out dates');
-//     } else if( checkInDate.getTime() >= checkOutDate.getTime() ){
-//         alert('check out day cant be before check in date');
-//     } else{
-//         $('#introPage').hide(); 
-//         $('#acommodationContainer').show();
-//     }
-
-
-//    let difference = checkOutDate.getTime() - checkInDate.getTime();
-//    console.log(difference);
-
-//    let dayDifference = difference/msDay;
-//    console.log(dayDifference);
-
-//    let valueOfPeople = ($("#valueOfPeople").val());
-//    console.log(valueOfPeople);
-
-//    displayOptions(dayDifference, valueOfPeople);
-// };
-
 function userSubmit(event){
-    $("#checkInDate").datepicker({
-        dateFormat: "dd-mm-yy",
-        changeMonth: true,
-        minDate: new Date(),
-        maxDate: "+1y",
-        onSelect: function(date){
-            let selectDate = new Date(date);
-            let msInADay = 86400000;
-            let stDate = new Date(selectDate.getTime() + msInADay);
+    event.preventDefault();
+    
+    let months = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
+    let msDay = 1000 * 3600 * 24;
+    let selectedLocation = $("#selectedLocation").val();
+    console.log(selectedLocation);
+    
+    // const checkInDate = new Date($('#checkInDate').val());
+    // const checkOutDate = new Date($('#checkOutDate').val());
+    // console.log(checkInDate);
 
-            $('#checkOutDate').datepicker('option', 'minDate', stDate);
-            let endDate = new Date(selectDate.getTime() + 15 * msInADay)
+    
+    // let checkInDay = checkInDate.getDate(),
+    //     checkInMonth = checkInDate.getMonth(),
+    //     checkInYear = checkInDate.getFullYear(),
+    //     checkOutDay = checkOutDate.getDate(),
+    //     checkOutMonth = checkOutDate.getMonth(),
+    //     checkOutYear = checkOutDate.getFullYear();
 
-            $('#checkOutDate').datepicker('option', 'maxDate', endDate)
-        }
-    });
 
-    $("#checkOutDate").datepicker({
-        dateFormat: 'dd-mm-yy',
-        changeMonth: true
-    });
-}
+    // let checkInDetails = [checkInDay,checkInMonth,checkInYear].join('/');
+    // let checkOutDetails = [checkOutDay,checkOutMonth,checkOutYear].join('/');
+    // console.log(checkInDetails);
+    // console.log(checkOutDetails);
+    checkInDate = new Date(checkInDate.split("-").reverse().join("-"))
+    checkOutDate = new Date(checkOutDate.split("-").reverse().join("-"))
+
+    console.log(checkInDate, checkOutDate);
+
+
+    if ( (checkInDate == 'Invalid Date') || (checkOutDate == 'Invalid Date') ){
+        alert('Please enter check in and check out dates');
+    } else if( checkInDate.getTime() >= checkOutDate.getTime() ){
+        alert('check out day cant be before check in date');
+    } else if( selectedLocation == null){
+        alert('Please choose a location')
+    } else{
+        $('#introPage').hide(); 
+        $('#acommodationContainer').show();
+    }
+
+
+   let difference = checkOutDate.getTime() - checkInDate.getTime();
+   console.log(difference);
+
+   let dayDifference = difference/msDay;
+   console.log(dayDifference);
+
+   let valueOfPeople = ($("#valueOfPeople").val());
+   console.log(valueOfPeople);
+
+   displayOptions(dayDifference, valueOfPeople,selectedLocation);
+};
+
 
 
 
@@ -1002,17 +1018,29 @@ function userSubmit(event){
 // start of card displaying function
 // ===================================================================
 
-function displayOptions(nights, guests){
+function displayOptions(nights, guests,location){
         console.log(nights);
         console.log(guests);
+        console.log(location)
         $('#acommodationCardContainer').empty();
-    for(let i = 0; i < objectArray.length; i++){
-        if( ((nights >= objectArray[i].minNight) && (nights <= objectArray[i].maxNight) && (guests >= objectArray[i].minPeople) && (guests <= objectArray[i].maxPeople)) ){
-            generateCard(i)
-            
-            let location = {lat: objectArray[i].latitude, lng: objectArray[i].longitude};
-        };
-    }
+        if(location == "everywhere"){
+            for(let i = 0; i < objectArray.length; i++){
+                if( ((nights >= objectArray[i].minNight) && (nights <= objectArray[i].maxNight) && (guests >= objectArray[i].minPeople) && (guests <= objectArray[i].maxPeople)) ){
+                    generateCard(i)
+                    
+                    let location = {lat: objectArray[i].latitude, lng: objectArray[i].longitude};
+                };
+            }
+        }
+        else{
+            for(let i = 0; i < objectArray.length; i++){
+                if((nights >= objectArray[i].minNight) && (nights <= objectArray[i].maxNight) && (guests >= objectArray[i].minPeople) && (guests <= objectArray[i].maxPeople) && location == objectArray[i].location){
+                    generateCard(i)
+                    
+                    let location = {lat: objectArray[i].latitude, lng: objectArray[i].longitude};
+                };
+            }
+        }
     // modal();
 }
 
@@ -1034,6 +1062,11 @@ function displayOptions(nights, guests){
 // ===================================================================
 // start of modal function
 // ===================================================================
+
+
+
+
+// i need to pass my days data into here / any other data that i want to display on the form from the initial search
 
 
 function modal(){                                                                                                                                                                                                                                                                                                                                   
@@ -1065,7 +1098,7 @@ function modal(){
                     </div>
                     `
                 )
-                $("#modalBody").empty().append(
+                $(".test").empty().append(
                     `
                     <div class="modal-body__top container-fluid">
                         <div class="modal-carousel col-md-6">
@@ -1140,13 +1173,6 @@ function modal(){
                             <h3 class="checkmarks-text">${objectArray[i].dinner}</h3>
                         </div>
                     </div>
-
-                    <div class="modal-body__bottom container-fluid">
-                        
-                        <div class="modal-form">
-                            <form></form>
-                        </div>
-                    </div>
                     `
                 )
             }
@@ -1204,3 +1230,4 @@ function generateCard(x){
 
 submitBtn.addEventListener('click', userSubmit);
 searchFilter.addEventListener("click", filterSearchWord)
+})

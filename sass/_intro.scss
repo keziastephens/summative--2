@@ -11,20 +11,19 @@
     background-repeat: no-repeat;
    
 
-
-
     &-header{
-        font-family: 'Poppins', sans-serif;
+        font-family: 'nationalMedium';
         text-transform: uppercase;
         font-size: 5rem;
         color: white;
+        margin-bottom: -25px;
         
     }
 
     &-header__two{
-        font-family: 'Poppins', sans-serif;
+        font-family: 'purePakati';
         text-transform: uppercase;
-        font-size: 10rem;
+        font-size: 15rem;
         color: white;
         
     }
@@ -32,7 +31,7 @@
     &-paragraph{
         font-size: 2rem;
         color: white;
-        font-family: "myFirstFont";
+        font-family: "nationalRegular";
     }
 }
 

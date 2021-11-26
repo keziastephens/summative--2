@@ -1,5 +1,15 @@
 @font-face{
-    font-family: "myFirstFont";
+    font-family: "nationalRegular";
     src: url(../UX/national-regular.otf);
 }
 
+@font-face{
+    font-family: "purePakati";
+    // src: url(../UX/PurePakati-Regular.otf);
+    src: url('../UX/PurePakati-Regular.otf') format('opentype');
+}
+
+@font-face{
+    font-family: "nationalMedium";
+    src: url(../UX/national-medium.otf);
+}

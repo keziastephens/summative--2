@@ -70,6 +70,7 @@
 
       <div class="intro-overay"></div>
      
+        
       <h4 class="intro-header">explore new zealand with</h4>
       <h1 class="intro-header__two">winterscapes</h1>
       <p class="intro-paragraph">Plan your next ski, snow, fireplace, hot chocolate fuelled, cozy yet excitement filled adventure today.</p>
@@ -82,22 +83,22 @@
               <label for="locationSelect">location</label>
               <select name="locationSelect" id="selectedLocation" class="form-input__location">
                 <option value="selectLocation" disabled selected hidden>Select your location</option>
-                <option value="1">Hanmer Springs</option>
-                <option value="2">Mt Hutt</option>
-                <option value="3">Queenstown</option>
-                <option value="4">Taupo</option>
-                <option value="5">Wanaka</option>
+                <option value="Hanmer Springs, NZ">Hanmer Springs</option>
+                <option value="Mt Hutt, NZ">Mt Hutt</option>
+                <option value="Queenstown, NZ">Queenstown</option>
+                <option value="Wanaka, NZ">Wanaka</option>
+                <option value="everywhere">Show me everywhere!</option>
               </select>
             </div>
 
             <div class="form-item">
                 <label for="checkInDate">check in</label>
-                <input class="form-input" id="checkInDate" type="text" placeholder="dd/mm/yyyy">
+                <input class="form-input" id="checkInDate" type="text" placeholder="dd/mm/yyyy" autocomplete="off">
             </div>
     
             <div class="form-item">
                 <label for="checkOutDate">check out</label>
-                <input class="form-input" id="checkOutDate" type="text" placeholder="dd/mm/yyyy">
+                <input class="form-input" id="checkOutDate" type="text" placeholder="dd/mm/yyyy" autocomplete="off">
             </div>
     
             <div class="form-item">
@@ -157,9 +158,11 @@
           <h5 class="modal-title" id="staticBackdropLabel"></h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body" id="modalBody">          
+        <div class="modal-body" id="modalBody"> 
+          <div class="test"></div>         
           <div class="map-container" id="mapContainer"></div>
         </div>
+        <!-- <div class="map-container" id="mapContainer"></div> -->
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary">Understood</button>
