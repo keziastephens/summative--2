@@ -1173,6 +1173,52 @@ function modal(){
                             <h3 class="checkmarks-text">${objectArray[i].dinner}</h3>
                         </div>
                     </div>
+                    
+                    <div class="modal-form">
+                    <div class="modal-form__container">
+                        <h1 class="modal-form__header">Confirm your details</h1>
+                        <form action="" class="confirmation-form">
+                            <div class="confirmation-form__name">
+                                <input type="text" placeholder="First Name" class="enter-name">
+                                <input type="text" placeholder="Last Name" class="enter-name">
+                            </div>
+                            <div class="checkinandout">
+                                <div class="date-checkin">
+                                    <label for="" class="date-header">Check In Date</label>
+                                    <input type="text" id="checkInDate" class="date-input">
+                                </div>
+                                <div class="date-checkout">
+                                    <label for="" class="date-header">Check Out Date</label>
+                                    <input type="text" id="checkOutDate" class="date-input">
+                                </div>    
+                            </div>
+                            <div class="guest-select">
+                                <select class="guests" name="" id="">
+                                    <option class="gueststext" value="" disabled selected hidden>Number of Guests</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <div class="final-container">
+                                <div class="meals">
+                                    <h1 class="meals-header">Would you like to pay an additional $29NZD for dinners?</h1>
+                                    <select name="" id="" class="meal-select">
+                                        <option value="">Yes</option>
+                                        <option value="">No</option>
+                                    </select>
+                                </div>
+                                <div class="confirmation-container">
+                                    <p class="total-paragraph">Your Total is</p>
+                                    <h2 class="order-total" id="orderTotal">$NZD</h2>
+                                    <button class="confirm-button">Go to Checkout</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
                     `
                 )
             }
