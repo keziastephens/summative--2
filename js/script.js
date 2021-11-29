@@ -60,9 +60,10 @@ $(document).ready(function(){
 // start of query selectors
 // ===================================================================
 
-const submitByn = document.querySelector('#submitBtn');
+const submitBtn = document.querySelector('#submitBtn');
 const searchFilter = document.querySelector('#searchFilter');
 const refreshButton = document.querySelector("#refresh")
+// const confirmBooking = document.querySelector("#confirmBooking")
 
 
 
@@ -1218,7 +1219,7 @@ function modal(){
                                 <div class="confirmation-container">
                                     <p class="total-paragraph">Your Total is</p>
                                     <h2 class="order-total" id="orderTotal">$ ${objectArray[i].price} NZD</h2>
-                                    <button class="confirm-button">Go to Checkout</button>
+                                    <button class="confirm-button" id="confirmBooking">Go to Checkout</button>
                                 </div>
                             </div>
                         </form>
@@ -1282,4 +1283,5 @@ function generateCard(x){
 
 submitBtn.addEventListener('click', userSubmit);
 searchFilter.addEventListener("click", filterSearchWord)
+// confirmBooking.addEventListener("click", confirmBooking)
 })
