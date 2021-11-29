@@ -184,10 +184,11 @@ input[type="date"]::-webkit-datetime-edit-year-field {
     width: 4%; }
 
 .modal-carousel {
-  height: 40vh; }
+  height: 100%; }
 
 .modal-header__info {
-  padding-left: 1rem; }
+  padding-left: 1rem;
+  font-family: "nationalRegular"; }
 
 .fa-cloud-moon {
   font-size: 2rem; }
@@ -202,7 +203,10 @@ input[type="date"]::-webkit-datetime-edit-year-field {
   padding-left: 0.5rem; }
 
 .modal-body__top {
-  display: flex; }
+  display: flex;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 1rem; }
 
 .modal-info {
   height: 100%;
@@ -213,10 +217,13 @@ input[type="date"]::-webkit-datetime-edit-year-field {
   .modal-info__text {
     padding-top: 1rem;
     font-size: 2rem;
-    width: 90%; }
+    width: 90%;
+    font-family: "nationalRegular"; }
+
+.carousel-inner {
+  height: 100%; }
 
 .carousel-item {
-  min-height: 600px;
   max-height: 600px;
   width: 100%;
   height: 100%;
@@ -227,42 +234,196 @@ input[type="date"]::-webkit-datetime-edit-year-field {
 
 .checkmarks {
   min-height: 10vh;
-  width: 70vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   margin: none;
-  background: yellow;
   padding-top: 2rem;
-  padding-bottom: 2rem; }
+  padding-bottom: 2rem;
+  border-top: 0.5px solid black;
+  border-bottom: 0.5px solid black; }
   .checkmarks-individual {
     padding: 2.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 3vh;
-    width: 20vw;
-    background: green; }
+    width: 20vw; }
   .checkmarks-text {
-    padding-left: 1rem; }
+    padding-left: 1rem;
+    font-family: "nationalRegular"; }
 
 .modal-body__bottom {
   min-height: 40vh;
   width: 70vw;
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  margin-top: 1rem; }
 
 .map-container {
-  height: 40vh;
+  min-height: 40vh;
   width: 50%;
-  background: yellowgreen;
   display: flex; }
 
-.modal-form {
-  height: 40vh;
+.modal-innerform {
+  min-height: 40vh;
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "nationalRegular"; }
+
+.modal-form {
+  min-height: 40vh;
+  width: 35vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .modal-form__container {
+    height: 100%;
+    width: 90%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 2rem; }
+
+.confirmation-form {
+  margin-top: 1rem;
+  min-height: 85%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2rem;
+  padding: 1.5rem;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; }
+
+.confirmation-form__name {
+  height: 18%;
+  width: 100%;
   display: flex; }
+
+.enter-name {
+  height: 4rem;
+  width: 46%;
+  margin: 1rem;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; }
+
+.enter-name::placeholder {
+  font-size: 1.5rem;
+  padding-left: 1rem; }
+
+.checkinandout {
+  display: flex;
+  width: 100%;
+  height: 20%; }
+
+.date-checkin {
+  display: flex;
+  flex-direction: column;
+  width: 50%; }
+
+.date-input {
+  padding: 1.5rem; }
+
+.date-checkout {
+  display: flex;
+  flex-direction: column;
+  width: 50%; }
+
+.date-header {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  padding-left: 0.5rem; }
+
+.date-input {
+  height: 5rem;
+  width: 90%;
+  margin: 1rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; }
+
+.guest-select {
+  height: 18%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem; }
+
+option {
+  padding: 1rem; }
+
+.guests {
+  height: 5rem;
+  width: 96%;
+  margin: 1rem;
+  padding-left: 1rem;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; }
+
+.gueststext {
+  font-size: 2rem;
+  padding-left: 1rem;
+  padding-right: 5rem; }
+
+.final-container {
+  height: 44%;
+  width: 100%;
+  display: flex; }
+
+.meals {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  padding-left: 2rem; }
+
+.meals-header {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 2rem; }
+
+.confirmation-container {
+  min-height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.meal-select {
+  width: 90%;
+  margin-top: 1rem;
+  padding: 0.3rem; }
+
+.total-paragraph {
+  font-size: 2rem; }
+
+.order-total {
+  font-size: 3rem;
+  padding-bottom: 0.5rem; }
+
+.confirm-button {
+  padding: 1rem;
+  border-radius: 1rem;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer; }
 
 .footer {
   background: black;

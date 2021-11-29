@@ -42,7 +42,7 @@ function initMap(){
         }
     });
     const map = new google.maps.Map(document.getElementById('mapContainer'),{
-        zoom: 5,
+        zoom: 8,
         center: newZealand
     });
 
@@ -1174,6 +1174,11 @@ function modal(){
                         </div>
                     </div>
                     
+                    `
+                )
+
+                $(".modal-innerform").empty().append(
+                    `
                     <div class="modal-form">
                     <div class="modal-form__container">
                         <h1 class="modal-form__header">Confirm your details</h1>
@@ -1212,15 +1217,16 @@ function modal(){
                                 </div>
                                 <div class="confirmation-container">
                                     <p class="total-paragraph">Your Total is</p>
-                                    <h2 class="order-total" id="orderTotal">$NZD</h2>
+                                    <h2 class="order-total" id="orderTotal">$ ${objectArray[i].price} NZD</h2>
                                     <button class="confirm-button">Go to Checkout</button>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
-                    `
+                `
                 )
+                
             }
         }
     });
