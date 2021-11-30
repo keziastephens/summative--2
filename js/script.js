@@ -7,7 +7,7 @@ let checkInDate,checkOutDate;
 function initMap(){
     let newZealand = {lat: -39.72496035524508, lng: 175.58280932991102};
         $("#checkInDate").datepicker({
-        dateFormat: "dd-mm-yy",
+        dateFormat: "yy-mm-dd",
         changeMonth: true,
         minDate: new Date(),
         maxDate: "+1y",
@@ -26,25 +26,20 @@ function initMap(){
     });
 
     $("#checkOutDate").datepicker({
-        dateFormat: 'dd-mm-yy',
+        dateFormat: 'yy-mm-dd',
         changeMonth: true,
-        onSelect: function(date){
-            let selectDate = new Date(date);
-            let msInADay = 86400000;
-            let stDate = new Date(selectDate.getTime() + msInADay);
 
-            // $('#checkOutDate').datepicker('option', 'minDate', stDate);
-            // let endDate = new Date(selectDate.getTime() + 15 * msInADay)
-
-            // $('#checkOutDate').datepicker('option', 'maxDate', endDate)
-            console.log(date)
-            checkOutDate = date
-        }
     });
     const map = new google.maps.Map(document.getElementById('mapContainer'),{
         zoom: 8,
         center: newZealand
     });
+
+    // new google.maps.Marker({
+    //     position: ,
+    //     map,
+    //     title:
+    // });
 
 
 }
@@ -72,7 +67,7 @@ const refreshButton = document.querySelector("#refresh")
 // ===================================================================
 
 
-
+let cardSortGenerator = [];
 
 
 // ===================================================================
@@ -814,6 +809,8 @@ let objectArray = [
 // start of search function
 // ===================================================================
 
+console.log(objectArray);
+
 function filterSearchWord(){
 
     $('input[type=checkbox]').prop('checked', false);
@@ -860,85 +857,87 @@ function noInput(){
 // ===================================================================
 
 
-// $('#sortBtn').change(function(){
-//     let sortValue = ($('#sortBtn').val()).toLowerCase();
-//     console.log(sortValue);
-//     if((sortValue === 'name') || (sortValue === 'price')){
-//         sortByAscending(sortValue);
-//     }
-// });
+$('#sortBtn').change(function(){
+    let sortValue = ($('#sortBtn').val()).toLowerCase();
+    console.log(sortValue);
+    if((sortValue === 'name') || (sortValue === 'price')){
+        sortByAscending(sortValue);
+    }
+});
 
-// function sortByAscending(sortOrder){
+function sortByAscending(sortOrder){
 
-//         console.log(sortOrder);
+        console.log(sortOrder);
 
-//         objectArray.sort(function(a,b){
+        cardSortGenerator.sort(function(a,b){
 
-//             switch(sortOrder){
-//                 case 'name':
-//                   let itemA = a.name.toLowerCase(), itemB = b.name.toLowerCase();
-//                     break;
-//                 case 'price':
-//                     console.log('price');
-//                     let itemA = a.price.toLowerCase(), itemB = b.price.toLowerCase();
-//                     break;
-//                 default:
-//                     console.log('not matching');
-//             };
+            let itemA;
+            let itemB;
 
-//             if(itemA < itemB){
-//                 return -1;
-//                 // false
-//             }
-//             if(itemA > itemB){
-//                 return 1;
-//                 // true
-//             }
-//         });
+            switch(sortOrder){
+                case 'name':
+                  itemA = a.name.toLowerCase(), itemB = b.name.toLowerCase();
+                    break;
+                case 'price':
+                    console.log('price');
+                    itemA = a.price, itemB = b.price;
+                    break;
+                default:
+                    console.log('not matching');
+            };
+            
 
-//         console.log(objectArray);
-//         allCards();
-//         modal();
-// };
+            if(itemA < itemB){
+                return -1;
+                // false
+            }
+            if(itemA > itemB){
+                return 1;
+                // true
+            }
+        });
 
-
-
-// $('#refresh').click(function(){
-//     console.log('#refresh')
-//     $('#cardContent').empty();
-//     $('input[type=checkbox]').prop('checked',false);
-//     $('input[type=radio]').prop('checked',false);
-
-//     objectArray.sort(function(a,b){
-//         let itemA = a.id, itemB = b.id;
-
-//         if(itemA < itemB){
-//             return -1;
-//             // false
-//         }
-//         if(itemA > itemB){
-//             return 1;
-//             // true
-//         }
-//         console.log(objectArray);
-
-//     });
-
-
-//     allCards();
-//     modal();
-// });
+        console.log(cardSortGenerator);
+        allCards();
+        modal();
+};
 
 
 
-// function allCards(){
-//     $('#cardContent').empty();
-//     for(let i =0; i <objectArray.length; i++){
-//         console.log(objectArray[i].title)
+$('#refresh').click(function(){
+    console.log('#refresh')
+    $('#cardContent').empty();
+    $('input[type=checkbox]').prop('checked',false);
+    $('input[type=radio]').prop('checked',false);
 
-//         generateCard(i);
-//     }
-// };
+    objectArray.sort(function(a,b){
+        let itemA = a.id, itemB = b.id;
+
+        if(itemA < itemB){
+            return -1;
+            // false
+        }
+        if(itemA > itemB){
+            return 1;
+            // true
+        }
+        console.log(objectArray);
+
+    });
+
+
+    allCards();
+    modal();
+});
+
+
+
+function allCards(){
+    $('#cardContent').empty();
+    for(let i =0; i <objectArray.length; i++){
+        generateCard(i);
+    }
+};
 
 
 
@@ -957,8 +956,8 @@ function userSubmit(event){
     let selectedLocation = $("#selectedLocation").val();
     console.log(selectedLocation);
     
-    // const checkInDate = new Date($('#checkInDate').val());
-    // const checkOutDate = new Date($('#checkOutDate').val());
+    const checkInDate = new Date($('#checkInDate').val());
+    const checkOutDate = new Date($('#checkOutDate').val());
     // console.log(checkInDate);
 
     
@@ -974,8 +973,8 @@ function userSubmit(event){
     // let checkOutDetails = [checkOutDay,checkOutMonth,checkOutYear].join('/');
     // console.log(checkInDetails);
     // console.log(checkOutDetails);
-    checkInDate = new Date(checkInDate.split("-").reverse().join("-"))
-    checkOutDate = new Date(checkOutDate.split("-").reverse().join("-"))
+    // checkInDate = new Date(checkInDate.split("-").reverse().join("-"))
+    // checkOutDate = new Date(checkOutDate.split("-").reverse().join("-"))
 
     console.log(checkInDate, checkOutDate);
 
@@ -1002,6 +1001,8 @@ function userSubmit(event){
    console.log(valueOfPeople);
 
    displayOptions(dayDifference, valueOfPeople,selectedLocation);
+   modal(checkInDate, checkOutDate, dayDifference);
+   generateCard(dayDifference);
 };
 
 
@@ -1027,8 +1028,9 @@ function displayOptions(nights, guests,location){
         if(location == "everywhere"){
             for(let i = 0; i < objectArray.length; i++){
                 if( ((nights >= objectArray[i].minNight) && (nights <= objectArray[i].maxNight) && (guests >= objectArray[i].minPeople) && (guests <= objectArray[i].maxPeople)) ){
-                    generateCard(i)
-                    
+                    generateCard(i);
+                    console.log(i);
+                    cardSortGenerator.push(objectArray[i]);
                     let location = {lat: objectArray[i].latitude, lng: objectArray[i].longitude};
                 };
             }
@@ -1036,12 +1038,14 @@ function displayOptions(nights, guests,location){
         else{
             for(let i = 0; i < objectArray.length; i++){
                 if((nights >= objectArray[i].minNight) && (nights <= objectArray[i].maxNight) && (guests >= objectArray[i].minPeople) && (guests <= objectArray[i].maxPeople) && location == objectArray[i].location){
-                    generateCard(i)
-                    
+                    generateCard(i);
+                    console.log();
+                    cardSortGenerator.push(objectArray[i]);
                     let location = {lat: objectArray[i].latitude, lng: objectArray[i].longitude};
                 };
             }
         }
+        console.log(cardSortGenerator);
     // modal();
 }
 
@@ -1054,6 +1058,22 @@ function displayOptions(nights, guests,location){
 
 
  
+
+// ===================================================================
+// start of sorting cards function
+// ===================================================================
+
+
+
+// ===================================================================
+// end of sorting cards function
+// ===================================================================
+
+
+
+
+
+
 
 
 
@@ -1070,7 +1090,7 @@ function displayOptions(nights, guests,location){
 // i need to pass my days data into here / any other data that i want to display on the form from the initial search
 
 
-function modal(){                                                                                                                                                                                                                                                                                                                                   
+function modal(checkIn,checkOut, nightDifference){                                                                                                                                                                                                                                                                                                                                   
     $('.card').click(function(){
         console.log("click");
         let i = 0;
@@ -1126,6 +1146,12 @@ function modal(){
                                 </div>
                                 <div class="carousel-item">
                                 <img src="${objectArray[i].imageFour}" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                <img src="${objectArray[i].imageFive}" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                <img src="${objectArray[i].imageSix}" class="d-block w-100" alt="...">
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -1191,11 +1217,11 @@ function modal(){
                             <div class="checkinandout">
                                 <div class="date-checkin">
                                     <label for="" class="date-header">Check In Date</label>
-                                    <input type="text" id="checkInDate" class="date-input">
+                                    <input type="text" id="checkInDate" class="date-input" value="${checkIn}">
                                 </div>
                                 <div class="date-checkout">
                                     <label for="" class="date-header">Check Out Date</label>
-                                    <input type="text" id="checkOutDate" class="date-input">
+                                    <input type="text" id="checkOutDate" class="date-input" value="${checkOut}">
                                 </div>    
                             </div>
                             <div class="guest-select">
@@ -1211,14 +1237,14 @@ function modal(){
                             <div class="final-container">
                                 <div class="meals">
                                     <h1 class="meals-header">Would you like to pay an additional $29NZD for dinners?</h1>
-                                    <select name="" id="" class="meal-select">
-                                        <option value="">Yes</option>
-                                        <option value="">No</option>
+                                    <select name="" id="mealSelect" class="meal-select">
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
                                     </select>
                                 </div>
                                 <div class="confirmation-container">
                                     <p class="total-paragraph">Your Total is</p>
-                                    <h2 class="order-total" id="orderTotal">$ ${objectArray[i].price} NZD</h2>
+                                    <h2 class="order-total" id="orderTotal">$ ${objectArray[i].price * nightDifference} NZD</h2>
                                     <button class="confirm-button" id="confirmBooking">Go to Checkout</button>
                                 </div>
                             </div>
@@ -1227,7 +1253,23 @@ function modal(){
                 </div>
                 `
                 )
-                
+
+                mealArray = [];
+                    if($("#mealSelect") === "Yes"){
+                        mealArray.push(29);
+                    }else{
+                        mealArray.pop();
+                    }
+                totalPrice(mealArray[0])
+
+                function totalPrice(costOfMeal){
+                    
+                    
+                    const priceTest = objectArray[i].price;
+                    const nightsTest = nightDifference;
+                    console.log(priceTest, nightsTest, costOfMeal);
+                }
+                totalPrice();
             }
         }
     });
@@ -1255,7 +1297,7 @@ modal();
 // start of generate card container
 // ===================================================================
 
-function generateCard(x){
+function generateCard(x, amountOfNights){
     $('#acommodationCardContainer').append(
         `
         <div id="${objectArray[x].id}" class="card" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
@@ -1266,7 +1308,8 @@ function generateCard(x){
                     <p class="card-text">${objectArray[x].location}</p>
                 </div>
                 <div class="card-body__right">
-                    <h5 class="card-title">$${objectArray[x].price} NZD <br> Per Night</h5>
+                    <h5 class="card-title">$${objectArray[x].price} NZD Per Night</h5>
+                    <h5 class="card-title">Total Price: $${objectArray[x].price * amountOfNights}</h5>
                 </div>
             </div>
         </div>
