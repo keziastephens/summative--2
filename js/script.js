@@ -35,14 +35,16 @@ function initMap(){
         center: newZealand
     });
 
-    // new google.maps.Marker({
-    //     position: ,
-    //     map,
-    //     title:
-    // });
+    // setMarkers(map);
+
+};
+
+    // function setMarkers(map){
+    //     for(let i = 0; i < objectArray.length; i++){
+    //         const locations = 
+    // }
 
 
-}
 
 $(document).ready(function(){
     $('body').append(script);

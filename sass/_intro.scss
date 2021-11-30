@@ -55,29 +55,30 @@
     background: #f9f9f9;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     border-radius: 2.5rem;
+
+    &-item{
+        height: 80%;
+        padding: 1rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+        border-right: 0.1rem solid rgba(0,0,0,0.1);
+    }
+
+    &-input{
+        padding: 0.5rem;
+        background: none;
+        border: none;        
+    }
+
+    &-input__location, &-input__people{
+        margin-top: 0.5rem;
+    }
+
 }
 
-.form-item{
-    height: 80%;
-    padding: 1rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    letter-spacing: 0.2rem;
-    text-transform: uppercase;
-    border-right: 0.1rem solid rgba(0,0,0,0.1);
-
-}
-
-.form-input{
-    padding: 0.5rem;
-    background: none;
-    border: none;
-}
-
-.form-input__location, .form-input__people{
-    margin-top: 0.5rem;
-}
 
 
 input[type="date"]::-webkit-datetime-edit-text,
