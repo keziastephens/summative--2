@@ -22,6 +22,8 @@ function initMap(){
             $('#checkOutDate').datepicker('option', 'maxDate', endDate)
             console.log(date)
             checkInDate = date;
+            window.checkInGlobal = date;
+
         }
     });
 
@@ -29,22 +31,33 @@ function initMap(){
         dateFormat: 'yy-mm-dd',
         changeMonth: true,
 
+
     });
     const map = new google.maps.Map(document.getElementById('mapContainer'),{
         zoom: 8,
-        center: newZealand
+        center: myLatLng,
     });
 
+    const latitude = objectArray[i].latitude;
+    const longitude = objectArray[i].longitude;
+    const myLatLng = {lat: latitude, lng: longitude};
     // setMarkers(map);
 
 };
 
-    // function setMarkers(map){
-    //     for(let i = 0; i < objectArray.length; i++){
-    //         const locations = 
-    // }
+
+    console.log(myLatLng);
+
+    function setMarkers(map){
+        for(let i = 0; i < objectArray.length; i++){
 
 
+            new google.maps.Marker({
+                position: {lat: latitude, lng: longitude},
+            })
+        }
+
+    }
 
 $(document).ready(function(){
     $('body').append(script);
@@ -57,9 +70,10 @@ $(document).ready(function(){
 // start of query selectors
 // ===================================================================
 
-const submitBtn = document.querySelector('#submitBtn');
-const searchFilter = document.querySelector('#searchFilter');
-const refreshButton = document.querySelector("#refresh")
+const confirmBooking = document.querySelector("#confirmBooking");
+const submitBtn = document.querySelector("#submitBtn");
+// const searchFilter = document.querySelector("#searchFilter");
+// const refreshButton = document.querySelector("#refresh")
 // const confirmBooking = document.querySelector("#confirmBooking")
 
 
@@ -68,8 +82,6 @@ const refreshButton = document.querySelector("#refresh")
 // end of query selectors
 // ===================================================================
 
-
-let cardSortGenerator = [];
 
 
 // ===================================================================
@@ -793,157 +805,6 @@ let objectArray = [
 // end of arrays
 // ===================================================================
 
-// ===================================================================
-// start of map function
-// ===================================================================
-
-
-
-// ===================================================================
-// end of map function
-// ===================================================================
-
-
-
-
-
-// ===================================================================
-// start of search function
-// ===================================================================
-
-console.log(objectArray);
-
-function filterSearchWord(){
-
-    $('input[type=checkbox]').prop('checked', false);
-    console.log('clicked');
-    let searchWord = $('#searchWord').val();
-    console.log(searchWord);
-    filterByWord(searchWord);
-    $('input[name=search]').val('');
-
-    modal();
-};
-
-let word = searchWord;
-
-function filterByWord(word){
-    console.log(word);
-    $('#cardContent').empty();
-    let i,j;
-    for(i =0; i<objectArray.length; i++){
-        for(j = 0; j<objectArray[i].tags.length; j++){
-            
-            if(word.toLowerCase() === objectArray[i].tags[j]){
-                generateCard(i);
-                modal();
-            }
-        }
-    };
-    if(word === ''){
-        noInput();
-    };
-    modal();
-};
-
-function noInput(){
-    for(let i = 0; i < objectArray.length; i++){
-        generateCard(i);
-    }
-    modal();
-};
-
-
-// ===================================================================
-// end of search function
-// ===================================================================
-
-
-$('#sortBtn').change(function(){
-    let sortValue = ($('#sortBtn').val()).toLowerCase();
-    console.log(sortValue);
-    if((sortValue === 'name') || (sortValue === 'price')){
-        sortByAscending(sortValue);
-    }
-});
-
-function sortByAscending(sortOrder){
-
-        console.log(sortOrder);
-
-        cardSortGenerator.sort(function(a,b){
-
-            let itemA;
-            let itemB;
-
-            switch(sortOrder){
-                case 'name':
-                  itemA = a.name.toLowerCase(), itemB = b.name.toLowerCase();
-                    break;
-                case 'price':
-                    console.log('price');
-                    itemA = a.price, itemB = b.price;
-                    break;
-                default:
-                    console.log('not matching');
-            };
-            
-
-            if(itemA < itemB){
-                return -1;
-                // false
-            }
-            if(itemA > itemB){
-                return 1;
-                // true
-            }
-        });
-
-        console.log(cardSortGenerator);
-        allCards();
-        modal();
-};
-
-
-
-$('#refresh').click(function(){
-    console.log('#refresh')
-    $('#cardContent').empty();
-    $('input[type=checkbox]').prop('checked',false);
-    $('input[type=radio]').prop('checked',false);
-
-    objectArray.sort(function(a,b){
-        let itemA = a.id, itemB = b.id;
-
-        if(itemA < itemB){
-            return -1;
-            // false
-        }
-        if(itemA > itemB){
-            return 1;
-            // true
-        }
-        console.log(objectArray);
-
-    });
-
-
-    allCards();
-    modal();
-});
-
-
-
-function allCards(){
-    $('#cardContent').empty();
-    for(let i =0; i <objectArray.length; i++){
-        generateCard(i);
-    }
-};
-
-
-
-
 
 // ===================================================================
 // start of user input function
@@ -956,7 +817,7 @@ function userSubmit(event){
     let months = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
     let msDay = 1000 * 3600 * 24;
     let selectedLocation = $("#selectedLocation").val();
-    console.log(selectedLocation);
+    // console.log(selectedLocation);
     
     const checkInDate = new Date($('#checkInDate').val());
     const checkOutDate = new Date($('#checkOutDate').val());
@@ -998,13 +859,13 @@ function userSubmit(event){
 
    let dayDifference = difference/msDay;
    console.log(dayDifference);
+   window.dayDifferenceGlobal = dayDifference;
 
    let valueOfPeople = ($("#valueOfPeople").val());
    console.log(valueOfPeople);
 
    displayOptions(dayDifference, valueOfPeople,selectedLocation);
    modal(checkInDate, checkOutDate, dayDifference);
-   generateCard(dayDifference);
 };
 
 
@@ -1025,29 +886,32 @@ function userSubmit(event){
 function displayOptions(nights, guests,location){
         console.log(nights);
         console.log(guests);
-        console.log(location)
+        console.log(location);
+
         $('#acommodationCardContainer').empty();
-        if(location == "everywhere"){
-            for(let i = 0; i < objectArray.length; i++){
-                if( ((nights >= objectArray[i].minNight) && (nights <= objectArray[i].maxNight) && (guests >= objectArray[i].minPeople) && (guests <= objectArray[i].maxPeople)) ){
+        
+
+         if(location == 'everywhere'){
+             console.log('everywhere has been selected');
+             for(let i = 0; i < objectArray.length; i++){
+                if( ( (nights >= objectArray[i].minNight) && (nights <= objectArray[i].maxNight) && (guests >= objectArray[i].minPeople) && (guests <= objectArray[i].maxPeople)   ) ){
                     generateCard(i);
                     console.log(i);
                     cardSortGenerator.push(objectArray[i]);
                     let location = {lat: objectArray[i].latitude, lng: objectArray[i].longitude};
                 };
             }
-        }
-        else{
+         }else{
             for(let i = 0; i < objectArray.length; i++){
-                if((nights >= objectArray[i].minNight) && (nights <= objectArray[i].maxNight) && (guests >= objectArray[i].minPeople) && (guests <= objectArray[i].maxPeople) && location == objectArray[i].location){
+                if( ( (nights >= objectArray[i].minNight) && (nights <= objectArray[i].maxNight) && (guests >= objectArray[i].minPeople) && (guests <= objectArray[i].maxPeople)  && (location == objectArray[i].location)   ) ){
                     generateCard(i);
-                    console.log();
+                    console.log(i);
                     cardSortGenerator.push(objectArray[i]);
                     let location = {lat: objectArray[i].latitude, lng: objectArray[i].longitude};
                 };
             }
-        }
-        console.log(cardSortGenerator);
+         
+         }
     // modal();
 }
 
@@ -1092,7 +956,7 @@ function displayOptions(nights, guests,location){
 // i need to pass my days data into here / any other data that i want to display on the form from the initial search
 
 
-function modal(checkIn,checkOut, nightDifference){                                                                                                                                                                                                                                                                                                                                   
+function modal(checkIn,checkOut, nightDifference){                                           
     $('.card').click(function(){
         console.log("click");
         let i = 0;
@@ -1219,7 +1083,7 @@ function modal(checkIn,checkOut, nightDifference){
                             <div class="checkinandout">
                                 <div class="date-checkin">
                                     <label for="" class="date-header">Check In Date</label>
-                                    <input type="text" id="checkInDate" class="date-input" value="${checkIn}">
+                                    <input type="text" id="checkInDate" class="date-input" value="${checkInGlobal}">
                                 </div>
                                 <div class="date-checkout">
                                     <label for="" class="date-header">Check Out Date</label>
@@ -1246,9 +1110,10 @@ function modal(checkIn,checkOut, nightDifference){
                                 </div>
                                 <div class="confirmation-container">
                                     <p class="total-paragraph">Your Total is</p>
-                                    <h2 class="order-total" id="orderTotal">$ ${objectArray[i].price * nightDifference} NZD</h2>
-                                    <button class="confirm-button" id="confirmBooking">Go to Checkout</button>
+                                    <h2 class="order-total" id="orderTotal">$ ${objectArray[i].price * dayDifferenceGlobal} NZD</h2>
+                                    <button class="confirm-button" id="confirmBooking" type="submit">Go to Checkout</button>
                                 </div>
+
                             </div>
                         </form>
                     </div>
@@ -1256,24 +1121,25 @@ function modal(checkIn,checkOut, nightDifference){
                 `
                 )
 
-                mealArray = [];
-                    if($("#mealSelect") === "Yes"){
-                        mealArray.push(29);
-                    }else{
-                        mealArray.pop();
-                    }
-                totalPrice(mealArray[0])
 
-                function totalPrice(costOfMeal){
+                // mealArray = [];
+                //     if($("#mealSelect") === "Yes"){
+                //         mealArray.push(29);
+                //     }else{
+                //         mealArray.pop();
+                //     }
+                // totalPrice(mealArray[0])
+
+                // function totalPrice(costOfMeal){
                     
                     
-                    const priceTest = objectArray[i].price;
-                    const nightsTest = nightDifference;
-                    console.log(priceTest, nightsTest, costOfMeal);
-                }
-                totalPrice();
+                //     const priceTest = objectArray[i].price;
+                //     const nightsTest = nightDifference;
+                //     // console.log(priceTest, nightsTest, costOfMeal);
+                // }
+                // totalPrice();
             }
-        }
+        };
     });
 }
 
@@ -1286,12 +1152,22 @@ modal();
 // ===================================================================
 
 
+// ===================================================================
+// start of confirmation container
+// ===================================================================
 
+$("#confirmBooking").click(function(event){
+    event.preventDefault();
+    console.log("clicked");
+    $("#introPage").hide(); 
+    $("#acommodationContainer").hide(); 
+    $("#confirmationContainer").show();
 
+});
 
-
-
-
+// ===================================================================
+// end of confirmation container
+// ===================================================================
 
 
 
@@ -1299,7 +1175,7 @@ modal();
 // start of generate card container
 // ===================================================================
 
-function generateCard(x, amountOfNights){
+function generateCard(x){
     $('#acommodationCardContainer').append(
         `
         <div id="${objectArray[x].id}" class="card" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
@@ -1311,7 +1187,7 @@ function generateCard(x, amountOfNights){
                 </div>
                 <div class="card-body__right">
                     <h5 class="card-title">$${objectArray[x].price} NZD Per Night</h5>
-                    <h5 class="card-title">Total Price: $${objectArray[x].price * amountOfNights}</h5>
+                    <h5 class="card-title">Total Price: $${objectArray[x].price * dayDifferenceGlobal}</h5>
                 </div>
             </div>
         </div>
@@ -1327,6 +1203,7 @@ function generateCard(x, amountOfNights){
 
 
 submitBtn.addEventListener('click', userSubmit);
-searchFilter.addEventListener("click", filterSearchWord)
+// searchFilter.addEventListener("click", filterSearchWord)
+// confirmBooking.addEventListener("click", confirmation)
 // confirmBooking.addEventListener("click", confirmBooking)
-})
+});
