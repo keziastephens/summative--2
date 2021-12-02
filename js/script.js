@@ -2,8 +2,11 @@ console.log('linked');
 
 
 let script = '<script src="https://maps.googleapis.com/maps/api/js?key=' + key +'&callback=initMap&libraries=places&v=weekly" async defer >';
-
+// global variables
 let checkInDate,checkOutDate;
+let map;
+let markers =[];
+
 function initMap(){
     let newZealand = {lat: -39.72496035524508, lng: 175.58280932991102};
         $("#checkInDate").datepicker({
@@ -24,40 +27,64 @@ function initMap(){
             checkInDate = date;
             window.checkInGlobal = date;
 
+            let checkInDateTest = new Date($('#checkInDate').val());
+            let checkOutDateTest = new Date($('#checkOutDate').val());
+
+            let checkInDay = checkInDateTest.getDate();
+            let checkInMonth = checkInDateTest.getMonth();
+            let checkInYear = checkInDateTest.getFullYear();
+            let checkOutDay = checkOutDateTest.getDate();
+            let checkOutMonth = checkOutDateTest.getMonth();
+            let checkOutYear = checkOutDateTest.getFullYear();
+
+            let checkInDetails = [checkInDay, checkInMonth, checkInYear].join('-');
+            console.log(checkInDetails);
+
+            
+            let checkOutDetails = [checkOutDay, checkOutMonth, checkOutYear].join('-');
+            console.log(checkOutDetails);
+            console.log(checkOutDateTest)
         }
     });
 
-    $("#checkOutDate").datepicker({
-        dateFormat: 'yy-mm-dd',
-        changeMonth: true,
+        
+        $("#checkOutDate").datepicker({
+            dateFormat: 'yy-mm-dd',
+            changeMonth: true,
+            // checkOutDetails = outDate;
+            // window.checkOutGlobal = outDate;
 
+        });
 
-    });
-    const map = new google.maps.Map(document.getElementById('mapContainer'),{
+   
+
+    map = new google.maps.Map(document.getElementById('mapContainer'),{
         zoom: 8,
-        center: myLatLng,
+        // center: myLatLng,
+        center: newZealand 
     });
 
-    const latitude = objectArray[i].latitude;
-    const longitude = objectArray[i].longitude;
-    const myLatLng = {lat: latitude, lng: longitude};
+ 
+
+
+    // let latitude = objectArray[i].latitude;
+    // let longitude = objectArray[i].longitude;
     // setMarkers(map);
 
+
+
+
 };
+// global create lat and lng variables
+
+let longitude;
+let latitude;
 
 
-    console.log(myLatLng);
 
-    function setMarkers(map){
-        for(let i = 0; i < objectArray.length; i++){
+    // console.log(myLatLng);
 
 
-            new google.maps.Marker({
-                position: {lat: latitude, lng: longitude},
-            })
-        }
-
-    }
 
 $(document).ready(function(){
     $('body').append(script);
@@ -866,6 +893,8 @@ function userSubmit(event){
 
    displayOptions(dayDifference, valueOfPeople,selectedLocation);
    modal(checkInDate, checkOutDate, dayDifference);
+
+
 };
 
 
@@ -884,6 +913,7 @@ function userSubmit(event){
 // ===================================================================
 
 function displayOptions(nights, guests,location){
+    // reloadMarkers();
         console.log(nights);
         console.log(guests);
         console.log(location);
@@ -897,25 +927,49 @@ function displayOptions(nights, guests,location){
                 if( ( (nights >= objectArray[i].minNight) && (nights <= objectArray[i].maxNight) && (guests >= objectArray[i].minPeople) && (guests <= objectArray[i].maxPeople)   ) ){
                     generateCard(i);
                     console.log(i);
-                    cardSortGenerator.push(objectArray[i]);
-                    let location = {lat: objectArray[i].latitude, lng: objectArray[i].longitude};
-                };
+                    let location = {lat: objectArray[i].latitude, lng:objectArray[i].longitude};
+                    // console.log(location);
+
+                    let marker = new google.maps.Marker({
+                        position: location,
+                        map:map
+                    });
+                    markers.push(marker);
+            
+                    
+                    
+                    
+                }
             }
          }else{
             for(let i = 0; i < objectArray.length; i++){
                 if( ( (nights >= objectArray[i].minNight) && (nights <= objectArray[i].maxNight) && (guests >= objectArray[i].minPeople) && (guests <= objectArray[i].maxPeople)  && (location == objectArray[i].location)   ) ){
                     generateCard(i);
                     console.log(i);
-                    cardSortGenerator.push(objectArray[i]);
-                    let location = {lat: objectArray[i].latitude, lng: objectArray[i].longitude};
-                };
+
+                     let location = {lat: objectArray[i].latitude, lng:objectArray[i].longitude};
+                    // console.log(location);
+
+                    let marker = new google.maps.Marker({
+                        position: location,
+                        map:map
+                    });
+                    markers.push(marker);
+                }
             }
          
          }
     // modal();
+    console.log(markers);
 }
 
-
+// function reloadMarkers(){
+//     // loop through our array and set the map to null value
+//     for(let i =0; i<markers.length; i++){
+//         markers[i].setMap(null);
+//     }
+//     markers=[];
+// }
 // ===================================================================
 // end of card displaying function
 // ===================================================================
@@ -956,13 +1010,27 @@ function displayOptions(nights, guests,location){
 // i need to pass my days data into here / any other data that i want to display on the form from the initial search
 
 
-function modal(checkIn,checkOut, nightDifference){                                           
+function modal(checkIn,checkOut, nightDifference){   
+                      
+    
+
     $('.card').click(function(){
+        reloadMarkers();
         console.log("click");
+        $("#modalHeader").empty();
+        $(".test").empty();
+        $(".modal-innerform").empty();
+        
+        
         let i = 0;
         for(i = 0; i < objectArray.length; i++){
             if(parseInt(this.id) === objectArray[i].id){
-                $("#modalHeader").empty().append(
+                let accomPrice = objectArray[i].price;
+                let nightsTotal = objectArray[i].nights;
+              
+
+            
+                $("#modalHeader").append(
                     `
                     <div class="modal-header__left">
                         <h3 class="modal-header__name">${objectArray[i].name}</h3>
@@ -985,7 +1053,7 @@ function modal(checkIn,checkOut, nightDifference){
                     </div>
                     `
                 )
-                $(".test").empty().append(
+                $(".test").append(
                     `
                     <div class="modal-body__top container-fluid">
                         <div class="modal-carousel col-md-6">
@@ -1070,7 +1138,7 @@ function modal(checkIn,checkOut, nightDifference){
                     `
                 )
 
-                $(".modal-innerform").empty().append(
+                $(".modal-innerform").append(
                     `
                     <div class="modal-form">
                     <div class="modal-form__container">
@@ -1103,10 +1171,12 @@ function modal(checkIn,checkOut, nightDifference){
                             <div class="final-container">
                                 <div class="meals">
                                     <h1 class="meals-header">Would you like to pay an additional $29NZD for dinners?</h1>
-                                    <select name="" id="mealSelect" class="meal-select">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
-                                    </select>
+                                    
+                                    <input name="mealsCheck" id="mealYes" class="meal-select" type="checkbox" value="29">
+                                    <label for="mealYes">Yes</label>
+
+
+                                    </input>
                                 </div>
                                 <div class="confirmation-container">
                                     <p class="total-paragraph">Your Total is</p>
@@ -1120,7 +1190,26 @@ function modal(checkIn,checkOut, nightDifference){
                 </div>
                 `
                 )
+               
+                printTotalPrice();
+                $("#mealYes").change(function(){
+                    let mealTest = [];
 
+                    if(this.checked = true){
+                        mealTest.push(this.value);
+                    } else if(this.checked == false){
+                        mealTest.pop();
+                    }
+                    printTotalPrice(mealTest[0]);
+                });
+
+                function printTotalPrice(mealPrice = 0){
+                    const price = accomPrice;
+                    const nights = nightsTotal;
+                    const total = (price * nights) + (parseFloat(mealPrice) * nights);
+                    $("#orderTotal").text("$ " +total);
+                }
+                
 
                 // mealArray = [];
                 //     if($("#mealSelect") === "Yes"){
@@ -1139,11 +1228,50 @@ function modal(checkIn,checkOut, nightDifference){
                 // }
                 // totalPrice();
             }
+            // console.log(markers);
+            // console.log(latitude);
+            // console.log(longitude);
+
+            // new google.maps.Marker({
+            //     position: {lat:latitude, lng:longitude},
+            //     map,
+               
+            //   });
+            // function setMarkers(map){
+
+                // let latitude = objectArray[i].latitude;
+                // let longitude = objectArray[i].longitude;
+                // console.log(latitude, longitude);
+                // // setMarkers(map);
+            
+    
+
+                // new google.maps.Marker({
+                //     position: {lat: objectArray[i].latitude, lng: objectArray[i].longitude},
+                //     map:map
+                    
+            
+                // })
+                // })
+            // }
+            // console.log(latitude, longitude)
+            // setMarkers();
+        // console.log(position);
         };
     });
+
 }
 
+// let markers =[];
+
 modal();
+function reloadMarkers(){
+    // loop through our array and set the map to null value
+    for(let i =0; i<markers.length; i++){
+        markers[i].setMap(null);
+    }
+    markers=[];
+}
 
 
 
