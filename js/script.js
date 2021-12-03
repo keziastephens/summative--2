@@ -18,36 +18,39 @@ function initMap(){
             let selectDate = new Date(date);
             let msInADay = 86400000;
             let stDate = new Date(selectDate.getTime() + msInADay);
+            // let fdfdf = window.checkInGlobal = date;
+            // console.log(fdfdf );
+                
 
             $('#checkOutDate').datepicker('option', 'minDate', stDate);
-            let endDate = new Date(selectDate.getTime() + 15 * msInADay)
+            let endDate = new Date(selectDate.getTime() + 15 * msInADay);
 
-            $('#checkOutDate').datepicker('option', 'maxDate', endDate)
-            console.log(date)
-            checkInDate = date;
-            window.checkInGlobal = date;
+            $('#checkOutDate').datepicker('option', 'maxDate', endDate);
+            console.log(date);
+            // checkInDate = date;
 
             let checkInDateTest = new Date($('#checkInDate').val());
             let checkOutDateTest = new Date($('#checkOutDate').val());
+            // console.log(checkInDateTest);
+            // console.log(checkOutDateTest);
 
-            let checkInDay = checkInDateTest.getDate();
-            let checkInMonth = checkInDateTest.getMonth();
-            let checkInYear = checkInDateTest.getFullYear();
-            let checkOutDay = checkOutDateTest.getDate();
-            let checkOutMonth = checkOutDateTest.getMonth();
-            let checkOutYear = checkOutDateTest.getFullYear();
+            // let checkInDay = checkInDateTest.getDate();
+            // let checkInMonth = checkInDateTest.getMonth();
+            // let checkInYear = checkInDateTest.getFullYear();
+            // let checkOutDay = checkOutDateTest.getDate();
+            // let checkOutMonth = checkOutDateTest.getMonth();
+            // let checkOutYear = checkOutDateTest.getFullYear();
 
-            let checkInDetails = [checkInDay, checkInMonth, checkInYear].join('-');
-            console.log(checkInDetails);
+            // let checkInDetails = [checkInDay, checkInMonth, checkInYear].join('-');
+            // console.log(checkInDetails);
 
             
-            let checkOutDetails = [checkOutDay, checkOutMonth, checkOutYear].join('-');
-            console.log(checkOutDetails);
-            console.log(checkOutDateTest)
-        }
+            // let checkOutDetails = [checkOutDay, checkOutMonth, checkOutYear].join('-');
+         
+        },
+    //   let fdfdf = window.checkInGlobal = date;
     });
-
-        
+   
         $("#checkOutDate").datepicker({
             dateFormat: 'yy-mm-dd',
             changeMonth: true,
@@ -74,7 +77,7 @@ function initMap(){
 
 
 
-};
+}
 // global create lat and lng variables
 
 let longitude;
@@ -144,7 +147,7 @@ let objectArray = [
         imageThree: './img/hotels/hanmer-03.jpg',
         imageFour: './img/hotels/hanmer-04.jpg',
         imageFive: './img/hotels/hanmer-05.jpg',
-        imageSix: './img/hotels/hanmer-06.jpeg',
+        imageSix: './img/hotels/hanmer-06.jpg',
         longitude: -42.520532551319555,
         latitude: 172.83025672678912,
         tick: '<i class="fas fa-check"></i>',
@@ -846,25 +849,26 @@ function userSubmit(event){
     let selectedLocation = $("#selectedLocation").val();
     // console.log(selectedLocation);
     
+    // acess from here
     const checkInDate = new Date($('#checkInDate').val());
     const checkOutDate = new Date($('#checkOutDate').val());
-    // console.log(checkInDate);
+    console.log(checkInDate);
+    console.log(checkOutDate);
 
     
-    // let checkInDay = checkInDate.getDate(),
-    //     checkInMonth = checkInDate.getMonth(),
-    //     checkInYear = checkInDate.getFullYear(),
-    //     checkOutDay = checkOutDate.getDate(),
-    //     checkOutMonth = checkOutDate.getMonth(),
-    //     checkOutYear = checkOutDate.getFullYear();
+    let checkInDay = checkInDate.getDate(),
+        checkInMonth = checkInDate.getMonth(),
+        checkInYear = checkInDate.getFullYear(),
+        checkOutDay = checkOutDate.getDate(),
+        checkOutMonth = checkOutDate.getMonth(),
+        checkOutYear = checkOutDate.getFullYear();
 
 
-    // let checkInDetails = [checkInDay,checkInMonth,checkInYear].join('/');
-    // let checkOutDetails = [checkOutDay,checkOutMonth,checkOutYear].join('/');
-    // console.log(checkInDetails);
-    // console.log(checkOutDetails);
-    // checkInDate = new Date(checkInDate.split("-").reverse().join("-"))
-    // checkOutDate = new Date(checkOutDate.split("-").reverse().join("-"))
+    let checkInDetails = [checkInDay,checkInMonth,checkInYear].join('-');
+    let checkOutDetails = [checkOutDay,checkOutMonth,checkOutYear].join('-');
+    console.log(checkInDetails);
+    console.log(checkOutDetails);
+
 
     console.log(checkInDate, checkOutDate);
 
@@ -874,7 +878,7 @@ function userSubmit(event){
     } else if( checkInDate.getTime() >= checkOutDate.getTime() ){
         alert('check out day cant be before check in date');
     } else if( selectedLocation == null){
-        alert('Please choose a location')
+        alert('Please choose a location');
     } else{
         $('#introPage').hide(); 
         $('#acommodationContainer').show();
@@ -892,10 +896,10 @@ function userSubmit(event){
    console.log(valueOfPeople);
 
    displayOptions(dayDifference, valueOfPeople,selectedLocation);
-   modal(checkInDate, checkOutDate, dayDifference);
+   modal(checkInDetails, checkOutDetails, dayDifference);
 
 
-};
+}
 
 
 
@@ -959,46 +963,13 @@ function displayOptions(nights, guests,location){
             }
          
          }
-    // modal();
     console.log(markers);
 }
 
-// function reloadMarkers(){
-//     // loop through our array and set the map to null value
-//     for(let i =0; i<markers.length; i++){
-//         markers[i].setMap(null);
-//     }
-//     markers=[];
-// }
+
 // ===================================================================
 // end of card displaying function
 // ===================================================================
-
-
-
-
- 
-
-// ===================================================================
-// start of sorting cards function
-// ===================================================================
-
-
-
-// ===================================================================
-// end of sorting cards function
-// ===================================================================
-
-
-
-
-
-
-
-
-
-
-
 
 // ===================================================================
 // start of modal function
@@ -1011,8 +982,6 @@ function displayOptions(nights, guests,location){
 
 
 function modal(checkIn,checkOut, nightDifference){   
-                      
-    
 
     $('.card').click(function(){
         reloadMarkers();
@@ -1020,6 +989,11 @@ function modal(checkIn,checkOut, nightDifference){
         $("#modalHeader").empty();
         $(".test").empty();
         $(".modal-innerform").empty();
+
+        // $('#mealSelect').change(function(){ 
+        //     let value = $(this).val();
+        // console.log(value)                    
+        // });
         
         
         let i = 0;
@@ -1027,7 +1001,9 @@ function modal(checkIn,checkOut, nightDifference){
             if(parseInt(this.id) === objectArray[i].id){
                 let accomPrice = objectArray[i].price;
                 let nightsTotal = objectArray[i].nights;
-              
+
+                let priceTotalForm = objectArray[i].price * dayDifferenceGlobal;
+                
 
             
                 $("#modalHeader").append(
@@ -1151,7 +1127,7 @@ function modal(checkIn,checkOut, nightDifference){
                             <div class="checkinandout">
                                 <div class="date-checkin">
                                     <label for="" class="date-header">Check In Date</label>
-                                    <input type="text" id="checkInDate" class="date-input" value="${checkInGlobal}">
+                                    <input type="text" id="checkInDate" class="date-input" value="${checkIn}">
                                 </div>
                                 <div class="date-checkout">
                                     <label for="" class="date-header">Check Out Date</label>
@@ -1159,29 +1135,29 @@ function modal(checkIn,checkOut, nightDifference){
                                 </div>    
                             </div>
                             <div class="guest-select">
-                                <select class="guests" name="" id="">
+                                <select class="guests" name="" id="guestSelect">
                                     <option class="gueststext" value="" disabled selected hidden>Number of Guests</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
+                                    <option value="${priceTotalForm * 0}">1</option>
+                                    <option value="${priceTotalForm * 1}">2</option>
+                                    <option value="${priceTotalForm * 2}">3</option>
+                                    <option value="${priceTotalForm * 3}">4</option>
+                                    <option value="${priceTotalForm * 4}">5</option>
                                 </select>
                             </div>
                             <div class="final-container">
                                 <div class="meals">
                                     <h1 class="meals-header">Would you like to pay an additional $29NZD for dinners?</h1>
-                                    
-                                    <input name="mealsCheck" id="mealYes" class="meal-select" type="checkbox" value="29">
-                                    <label for="mealYes">Yes</label>
-
-
+                                        <select class="meal-select" id="mealSelect">
+                                            <option disabled selected hidden>Please choose an option</option>
+                                            <option value="29">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
                                     </input>
                                 </div>
                                 <div class="confirmation-container">
                                     <p class="total-paragraph">Your Total is</p>
-                                    <h2 class="order-total" id="orderTotal">$ ${objectArray[i].price * dayDifferenceGlobal} NZD</h2>
-                                    <button class="confirm-button" id="confirmBooking" type="submit">Go to Checkout</button>
+                                    <h2 class="order-total" id="orderTotal">$ ${priceTotalForm} NZD</h2>
+                                    <button class="confirm-button" id="confirmBooking" type="submit">Continue to Checkout</button>
                                 </div>
 
                             </div>
@@ -1189,77 +1165,32 @@ function modal(checkIn,checkOut, nightDifference){
                     </div>
                 </div>
                 `
-                )
+                );
                
-                printTotalPrice();
-                $("#mealYes").change(function(){
-                    let mealTest = [];
+                $('#mealSelect').change(function(){ 
+                    // get the values
+                    let value = $(this).val();
+                    console.log( parseInt(priceTotalForm) + parseInt(value) );  
+                
+                    document.getElementById("orderTotal").innerHTML = "$ " + (parseInt(priceTotalForm) + parseInt(value)) + " NZD";
+                });
+               
+                $('#guestSelect').change(function(){ 
+                    // get the values
+                    let value = $(this).val();
+                    console.log( parseInt(priceTotalForm) + parseInt(value) );  
+                
+                    document.getElementById("orderTotal").innerHTML = "$ " + (parseInt(priceTotalForm) + parseInt(value)) + " NZD";
 
-                    if(this.checked = true){
-                        mealTest.push(this.value);
-                    } else if(this.checked == false){
-                        mealTest.pop();
-                    }
-                    printTotalPrice(mealTest[0]);
+                    if($("#mealSelect") == "29"){
+                        ((parseInt(priceTotalForm) + parseInt(value)) + 29)
+                    };
+
                 });
 
-                function printTotalPrice(mealPrice = 0){
-                    const price = accomPrice;
-                    const nights = nightsTotal;
-                    const total = (price * nights) + (parseFloat(mealPrice) * nights);
-                    $("#orderTotal").text("$ " +total);
-                }
-                
-
-                // mealArray = [];
-                //     if($("#mealSelect") === "Yes"){
-                //         mealArray.push(29);
-                //     }else{
-                //         mealArray.pop();
-                //     }
-                // totalPrice(mealArray[0])
-
-                // function totalPrice(costOfMeal){
-                    
-                    
-                //     const priceTest = objectArray[i].price;
-                //     const nightsTest = nightDifference;
-                //     // console.log(priceTest, nightsTest, costOfMeal);
-                // }
-                // totalPrice();
             }
-            // console.log(markers);
-            // console.log(latitude);
-            // console.log(longitude);
-
-            // new google.maps.Marker({
-            //     position: {lat:latitude, lng:longitude},
-            //     map,
-               
-            //   });
-            // function setMarkers(map){
-
-                // let latitude = objectArray[i].latitude;
-                // let longitude = objectArray[i].longitude;
-                // console.log(latitude, longitude);
-                // // setMarkers(map);
-            
-    
-
-                // new google.maps.Marker({
-                //     position: {lat: objectArray[i].latitude, lng: objectArray[i].longitude},
-                //     map:map
-                    
-            
-                // })
-                // })
-            // }
-            // console.log(latitude, longitude)
-            // setMarkers();
-        // console.log(position);
-        };
+        }
     });
-
 }
 
 // let markers =[];
@@ -1320,9 +1251,9 @@ function generateCard(x){
             </div>
         </div>
         `    
-    )
+    );
     modal();
-};
+}
 
 // ===================================================================
 // end of generate card container

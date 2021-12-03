@@ -12,19 +12,20 @@
    
 
     &-header{
-        font-family: 'nationalMedium';
+        font-family: 'Poppins', sans-serif;
         text-transform: uppercase;
-        font-size: 5rem;
+        font-size: 4rem;
         color: white;
-        margin-bottom: -25px;
+        margin-bottom: -15px;
         
     }
 
     &-header__two{
-        font-family: 'nationalMedium';
+        font-family: 'Poppins', sans-serif;        
         text-transform: uppercase;
-        font-size: 10rem;
+        font-size: 9rem;
         color: white;
+
         
     }
 
@@ -32,6 +33,9 @@
         font-size: 2rem;
         color: white;
         font-family: "nationalRegular";
+        padding-bottom: 1rem;
+        text-align: center;
+        width: 60ch;
     }
 }
 
@@ -100,3 +104,53 @@ color: blue;
     color: rgb(216, 154, 154);
 }
 
+// ========================================
+// media queries -- tablet
+// ========================================
+
+@media only screen and (min-width:426px) and (max-width:768px){
+
+    .intro-header{
+        font-size: 3rem;
+    }
+
+    .intro-header__two{
+        font-size: 7rem;
+    }
+
+    .intro-paragraph{
+        font-size: 1.8rem;
+        width: 50ch;
+        text-align: center;
+
+    }
+
+}
+
+
+
+@media only screen and (max-width:425px){
+
+    .intro-header{
+        font-size: 2rem;
+        margin-bottom: 0.01rem;
+    }
+
+    .intro-header__two{
+        font-size: 5rem;
+
+    }
+
+    .intro-paragraph{
+        font-size: 1.5rem;
+        width: 50ch;
+        text-align: center;
+
+    }
+
+    .form-container{
+        width: 50vw;
+        height: 20vh;
+        position: relative;
+    }
+}
