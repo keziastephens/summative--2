@@ -64,7 +64,9 @@
     display: none;
 }
 
-
+// ========================================
+// media queries -- mobile
+// ========================================
 
 @media only screen and (max-width:425px){
 
@@ -75,10 +77,12 @@
 
     .nav-mobile{
         display: block;
+        padding-left: 2rem;
     }
     .hamburger-menu{
         display: block;
         float: right;
+        padding-left: 7rem;
     }
 
     .nav-ul{

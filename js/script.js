@@ -154,7 +154,6 @@ let objectArray = [
         peopleIcon: '<i class="fa-solid fa-user-group"></i>',
         nightsIcon: '<i class="fas fa-cloud-moon"></i>',
         address: '1 Conical Hill, Hanmer Springs 7334',
-        tags: ['hotel', 'hanmer', 'hanmer springs', 'hanmer springs hotel'],
         info: `Set among mature trees and surrounded by the Southern Alps, this beautifully restored local landmark has been transformed into a resort with outdoor swimming pool, tennis and petanque courts. Guests enjoy free WiFi.
         <br>
         <br>
@@ -200,7 +199,6 @@ let objectArray = [
         peopleIcon: '<i class="fa-solid fa-user-group"></i>',
         nightsIcon: '<i class="fas fa-cloud-moon"></i>',
         address: '14 Amuri Avenue, Hanmer Springs 7334',
-        tags: ['hostel', 'hanmer', 'hanmer springs', 'kakapo', 'lodge', 'kakapo lodge', 'backpackers', 'kakapo lodge backpackers'],
         info: `This two-story purpose-built backpacker hostel features modern rooms, an open lounge with warm fireplace, and a relaxed, friendly atmosphere. Enjoy our spacious, well-appointed backpacker accommodation, movie hire, 1GB free WiFi daily, large kitchen, outdoor courtyard with views of the Southern Alps, and friendly hostel dog.
         <br>
         <br>
@@ -240,7 +238,6 @@ let objectArray = [
         peopleIcon: '<i class="fa-solid fa-user-group"></i>',
         nightsIcon: '<i class="fas fa-cloud-moon"></i>',
         address: '56 Jacks Pass Road, Hanmer Springs 7334',
-        tags: ['motel', 'hanmer', 'hanmer springs', 'chalets', 'chalets motel'],
         info: `The Chalets Motel offers charming self-contained cottages with scenic mountain views. Featuring a DVD library, it is just 601 m from hot pools and Hanmer Springs’ village center.
         <br>
         <br>
@@ -279,8 +276,6 @@ let objectArray = [
         tick: '<i class="fas fa-check"></i>',
         peopleIcon: '<i class="fa-solid fa-user-group"></i>',
         nightsIcon: '<i class="fas fa-cloud-moon"></i>',
-        address: '750 Hanmer Springs Road, Highway, Hanmer Springs 7334',
-        tags: ['house', 'hanmer', 'hanmer springs', 'riverview', 'river', 'riverview cottage', 'cottage'],
         info: `A cosy and spacious 1 Bedroom Cottage with lovely garden & mountain views. Free Continental self service breakfast. Kitchen has cooking elements, microwave, fridge/freezer-open plan with lounge area. Sky TV, free Wifi, a deck with great views. Bedroom is roomy-Queen bed, large bathroom with
         shower & spa bath. Located on main route to Hanmer Springs, just over the Waiau Ferry Bridge. 
         <br>
@@ -330,7 +325,6 @@ let objectArray = [
         peopleIcon: '<i class="fa-solid fa-user-group"></i>',
         nightsIcon: '<i class="fas fa-cloud-moon"></i>',
         address: '623 Coleridge Road, Windwhistle 7572',
-        tags: ['hotel', 'mount hutt', 'mt hutt', 'mount', 'terrace', 'terrace downs', 'resort', 'terrace downs resort'],
         info: `Situated in the picturesque Canterbury high country, Terrace Downs Resort features all day dining, an 18 hole golf course and a range of outdoor activities. The villas have open-plan living spaces with gas fires. Guests can enjoy free on-site parking.
         <br>
         <br>
@@ -373,7 +367,6 @@ let objectArray = [
         peopleIcon: '<i class="fa-solid fa-user-group"></i>',
         nightsIcon: '<i class="fas fa-cloud-moon"></i>',
         address: '25 South Belt, Methven 7730',
-        tags: ['hostel', 'mount hutt', 'mt hutt', 'mount', 'big tree', 'lodge', 'big tree lodge', 'big', 'tree', 'methven'],
         info: `Located in Methven, Big Tree Lodge Methven is a colonial villa and former vicarage, offering free Wi-Fi and free bicycle hire. Guests can prepare a meal in the shared kitchen or socialise in the shared lounge.
         <br>
         <br>
@@ -416,7 +409,6 @@ let objectArray = [
         peopleIcon: '<i class="fa-solid fa-user-group"></i>',
         nightsIcon: '<i class="fas fa-cloud-moon"></i>',
         address: '205 Main Street, 7730 Methven, New Zealand',
-        tags: ['motel', 'mount hutt', 'mt hutt', 'mt hutt motel', 'mount', 'mount hutt motel'],
         info: `Mount Hutt Motels is located in Methven and features a grass tennis court. The motel features free WiFi, parking and barbecue facilities.
         <br>
         <br>
@@ -459,7 +451,6 @@ let objectArray = [
         peopleIcon: '<i class="fa-solid fa-user-group"></i>',
         nightsIcon: '<i class="fas fa-cloud-moon"></i>',
         address: '592 Blackford Road, Rakaia Gorge RD12, 7782',
-        tags: ['house', 'mt hutt', 'mount hutt', 'mount', 'montrose', 'montrose estate', 'estate'],
         info: `Set on the base of Mount Hutt ski area, on 750 acres of prime riverfront land, Montrose Estate provides 3 chalets offering self-contained, luxury accommodations overlooking the Rakaia River, mountain ranges and a 5-acre lake.
         <br>
         <br>
@@ -508,7 +499,6 @@ let objectArray = [
         peopleIcon: '<i class="fa-solid fa-user-group"></i>',
         nightsIcon: '<i class="fas fa-cloud-moon"></i>',
         address: '91 Fernhill Road, Queenstown 9300',
-        tags: ['hotel', 'queenstown', 'heritage', 'heritage hotel'],
         info: `You can enjoy soaking in the view of the Remarkables mountain range, rising from the waters of Lake Wakatipu, from the comfort of Heritage Queenstown. Crafted from centuries-old stone and cedar, this sophisticated hotel is suitable for business and leisure stays and boasts stunning views over Lake Wakatipu and Queenstown. It is located within a 5-minute drive from the town centre.
         <br>
         <br>
@@ -551,7 +541,6 @@ let objectArray = [
         peopleIcon: '<i class="fa-solid fa-user-group"></i>',
         nightsIcon: '<i class="fas fa-cloud-moon"></i>',
         address: '36 Camp Street, Queenstown 9300',
-        tags: ['hostel', 'queenstown', 'adventure', 'adventure hostel'],
         info: `Situated in Queenstown and with Skyline Gondola and Luge reachable within less than 1 km, Adventure Queenstown Hostel features a tour desk, non-smoking rooms, free bikes, free WiFi throughout the property and a shared lounge. Boasting barbecue facilities, the hostel is close to several noted attractions, around 500 m from Fear Factory Queenstown, 800 m from Queenstown Chamber Of Commerce and less than 1 km from Queenstown Lakes District Library. The accommodation provides evening entertainment and a shared kitchen.
         <br>
         <br>
@@ -591,7 +580,6 @@ let objectArray = [
         peopleIcon: '<i class="fa-solid fa-user-group"></i>',
         nightsIcon: '<i class="fas fa-cloud-moon"></i>',
         address: '136 Frankton Road, Queenstown 9300',
-        tags: ['motel', 'queenstown', 'colonial', 'colonial village', 'colonial village motel', 'village'],
         info: `Boasting rooms with stunning mountain and lake views, Colonial Village Motel is just a 5-minute walk from Lake Wakatipu. Free parking is available.
         <br>
         <br>
@@ -634,7 +622,6 @@ let objectArray = [
         peopleIcon: '<i class="fa-solid fa-user-group"></i>',
         nightsIcon: '<i class="fas fa-cloud-moon"></i>',
         address: '21 Perkins Road, Frankton, Queenstown 9300',
-        tags: ['house', 'queenstown', 'modbox', 'rua', 'modbox rua'],
         info: `This brand new, 2 bedroom property is perfectly nestled on Queenstown Hill. Enjoy uninterrupted views of Lake Wakatipu and The Remarkables mountain range. Located on a quiet street, with floor to ceiling windows this property is ultra private and comfortable.
         <br>
         <br>
@@ -697,7 +684,6 @@ let objectArray = [
         peopleIcon: '<i class="fa-solid fa-user-group"></i>',
         nightsIcon: '<i class="fas fa-cloud-moon"></i>',
         address: 'Sargood Drive, 9305 Wanaka, New Zealand',
-        tags: ['hotel', 'wanaka', 'edge', 'edgewater', 'water', 'edgewater hotel'],
         info: `Edgewater is located on the edge of Lake Wanaka, only 2 km from Wanaka town centre. The property offers picturesque lake views, a day spa, a sauna and a tennis court. Staff are able to converse in English and Chinese.
         <br>
         <br>
@@ -737,7 +723,6 @@ let objectArray = [
         peopleIcon: '<i class="fa-solid fa-user-group"></i>',
         nightsIcon: '<i class="fas fa-cloud-moon"></i>',
         address: '117 Lakeside Road, Wanaka 9305',
-        tags: ['hostel', 'wanaka', 'wanaka bakpaka', 'pakpaka', 'backpackers', 'wanaka bakpaka hostel'],
         info: `Wanaka Bakpaka offers quality budget backpacker accommodation for the independent traveler. We are the only hostel in Wanaka located right on the lakeside giving you spectacular picture postcard views of Lake Wanaka and the Southern Alps. Away from the town hustle but still only a 5 minute lakeside stroll to the centre for shopping, cafes, bars and restaurants.`
     },
     {
@@ -771,7 +756,6 @@ let objectArray = [
         peopleIcon: '<i class="fa-solid fa-user-group"></i>',
         nightsIcon: '<i class="fas fa-cloud-moon"></i>',
         address: '136 Frankton Road, Queenstown 9300',
-        tags: ['motel', 'wanaka', 'aspiring', 'aspiring lodge', 'aspiring lodge motel', 'lodge'],
         info: `Featuring panoramic views of the surrounding mountains, Aspiring Lodge Motel offers accommodations with a balcony or a private courtyard.
         <br>
         <br>
@@ -817,7 +801,6 @@ let objectArray = [
         peopleIcon: '<i class="fa-solid fa-user-group"></i>',
         nightsIcon: '<i class="fas fa-cloud-moon"></i>',
         address: '1 Weatherall Close, Wanaka 9305',
-        tags: ['house', 'wanaka', 'mount iron', 'cabin', 'iron', 'mount iron cabin', 'mount'],
         info: `Mount Iron Cabin is a newly crafted stand-alone chalet on the side of Mount Iron, Wanaka. Built to soak up the sun and capture the mountain vistas this bespoke private chalet will be your base for adventure and/or pure relaxation. Nestled in a Kanuka glade, enjoy stargazing from the outdoor double bath and continue the stargazing in your plush bed with skylight above.
         <br>
         <br>
@@ -894,6 +877,7 @@ function userSubmit(event){
 
    let valueOfPeople = ($("#valueOfPeople").val());
    console.log(valueOfPeople);
+   window.valPeopleGlobal = valueOfPeople;
 
    displayOptions(dayDifference, valueOfPeople,selectedLocation);
    modal(checkInDetails, checkOutDetails, dayDifference);
@@ -1136,7 +1120,7 @@ function modal(checkIn,checkOut, nightDifference){
                             </div>
                             <div class="guest-select">
                                 <select class="guests" name="" id="guestSelect">
-                                    <option class="gueststext" value="" disabled selected hidden>Number of Guests</option>
+                                    <option class="gueststext" value="" disabled selected hidden>${valPeopleGlobal}</option>
                                     <option value="${priceTotalForm * 0}">1</option>
                                     <option value="${priceTotalForm * 1}">2</option>
                                     <option value="${priceTotalForm * 2}">3</option>
@@ -1156,7 +1140,7 @@ function modal(checkIn,checkOut, nightDifference){
                                 </div>
                                 <div class="confirmation-container">
                                     <p class="total-paragraph">Your Total is</p>
-                                    <h2 class="order-total" id="orderTotal">$ ${priceTotalForm} NZD</h2>
+                                    <h2 class="order-total" id="orderTotal">$ ${priceTotalForm * valPeopleGlobal} NZD</h2>
                                     <button class="confirm-button" id="confirmBooking" type="submit">Continue to Checkout</button>
                                 </div>
 
@@ -1169,25 +1153,26 @@ function modal(checkIn,checkOut, nightDifference){
                
                 $('#mealSelect').change(function(){ 
                     // get the values
-                    let value = $(this).val();
-                    console.log( parseInt(priceTotalForm) + parseInt(value) );  
-                
-                    document.getElementById("orderTotal").innerHTML = "$ " + (parseInt(priceTotalForm) + parseInt(value)) + " NZD";
+                    let foodValue = $(this).val();
+                    console.log( parseInt(priceTotalForm) + parseInt(foodValue) );  
+                    console.log(foodValue)
+                    window.foodValueGlobal = foodValue;
+                    document.getElementById("orderTotal").innerHTML = "$ " + (parseInt(priceTotalForm) + parseInt(foodValue)) + " NZD";
                 });
                
                 $('#guestSelect').change(function(){ 
                     // get the values
                     let value = $(this).val();
                     console.log( parseInt(priceTotalForm) + parseInt(value) );  
-                
+                    window.peopleGlobal = value;
                     document.getElementById("orderTotal").innerHTML = "$ " + (parseInt(priceTotalForm) + parseInt(value)) + " NZD";
 
-                    if($("#mealSelect") == "29"){
-                        ((parseInt(priceTotalForm) + parseInt(value)) + 29)
-                    };
 
                 });
 
+                if($("#mealSelect") == "29"){
+                    ((parseInt(priceTotalForm) + parseInt(peopleGlobal)) + 29)
+                };
             }
         }
     });
@@ -1246,7 +1231,7 @@ function generateCard(x){
                 </div>
                 <div class="card-body__right">
                     <h5 class="card-title">$${objectArray[x].price} NZD Per Night</h5>
-                    <h5 class="card-title">Total Price: $${objectArray[x].price * dayDifferenceGlobal}</h5>
+                    <h5 class="card-title">Total Price: $${objectArray[x].price * dayDifferenceGlobal * valPeopleGlobal}</h5>
                 </div>
             </div>
         </div>

@@ -77,11 +77,13 @@ a {
     display: none; }
 
   .nav-mobile {
-    display: block; }
+    display: block;
+    padding-left: 2rem; }
 
   .hamburger-menu {
     display: block;
-    float: right; }
+    float: right;
+    padding-left: 7rem; }
 
   .nav-ul {
     display: none; } }
@@ -188,12 +190,7 @@ input[type="date"]::-webkit-datetime-edit-year-field {
   .intro-paragraph {
     font-size: 1.5rem;
     width: 50ch;
-    text-align: center; }
-
-  .form-container {
-    width: 50vw;
-    height: 20vh;
-    position: relative; } }
+    text-align: center; } }
 .modal-dialog {
   max-height: 50vh;
   max-width: 70vw;
