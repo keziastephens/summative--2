@@ -39,12 +39,18 @@ a {
     display: flex;
     align-items: center;
     margin: 1rem; }
-  .nav-li {
-    font-size: 1.3rem;
+  .nav-link {
+    font-size: 1.5rem;
     color: black;
     padding: 1rem; }
   .nav-right {
     display: flex; }
+
+a {
+  color: black; }
+
+a:hover {
+  color: #29ade5; }
 
 .search-container {
   display: flex;
@@ -167,7 +173,7 @@ input[type="date"]::-webkit-datetime-edit-year-field {
   cursor: pointer; }
 
 .submitBtn:hover {
-  color: #d89a9a; }
+  color: #29ade5; }
 
 @media only screen and (min-width: 426px) and (max-width: 768px) {
   .intro-header {

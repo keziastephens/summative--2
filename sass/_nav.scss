@@ -20,10 +20,11 @@
         display: flex;
         align-items: center;
         margin: 1rem;
+        
     }
 
-    &-li{
-        font-size: 1.3rem;
+    &-link{
+        font-size: 1.5rem;
         color: black;
         padding: 1rem;
     }
@@ -31,6 +32,14 @@
     &-right{
         display: flex;
     }
+}
+
+a{
+    color: black;
+}
+
+a:hover{
+    color: rgb(41, 173, 229);
 }
 
 .search-container{
