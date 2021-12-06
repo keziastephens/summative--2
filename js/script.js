@@ -703,11 +703,11 @@ console.log('linked');
 
 let script = '<script src="https://maps.googleapis.com/maps/api/js?key=' + key +'&callback=initMap&libraries=places&v=weekly" async defer >';
 // global variables
-let checkInDate,checkOutDate;
 let map;
 let markers =[];
     let newZealand = {lat: -39.72496035524508, lng: 175.58280932991102};
-function initMap(){
+
+    function initMap(){
 
         $("#checkInDate").datepicker({
         dateFormat: "yy-mm-dd",
@@ -725,9 +725,6 @@ function initMap(){
 
             $('#checkOutDate').datepicker('option', 'maxDate', endDate);
             console.log(date);
-
-            let checkInDateTest = new Date($('#checkInDate').val());
-            let checkOutDateTest = new Date($('#checkOutDate').val());
         },
     });
    
@@ -743,19 +740,13 @@ function initMap(){
         center: newZealand 
     });
 
- 
-    // setMarkers(map);
 
-    // let latitude = objectArray[i].latitude;
-    // let longitude = objectArray[i].longitude;
-    // setMarkers(map);
     new google.maps.Marker({
-        // position: {lat:location[0], lng:location[1]},
         position: {lat: -39.72496035524508, lng: 175.58280932991102},
         map,
     });
 
-};
+}
 
 
 
@@ -791,7 +782,6 @@ $(document).ready(function(){
 // start of query selectors
 // ===================================================================
 
-const confirmBooking = document.querySelector("#confirmBooking");
 const submitBtn = document.querySelector("#submitBtn");
 
 
@@ -818,12 +808,10 @@ $("#hamburger").click(function(){
 function userSubmit(event){
     event.preventDefault();
     
-    let months = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
     let msDay = 1000 * 3600 * 24;
     let selectedLocation = $("#selectedLocation").val();
-    // console.log(selectedLocation);
     
-    // acess from here
+    // access datepicker from here
     const checkInDate = new Date($('#checkInDate').val());
     const checkOutDate = new Date($('#checkOutDate').val());
     console.log(checkInDate);
@@ -963,19 +951,9 @@ function modal(checkIn,checkOut, nightDifference){
         $("#modalHeader").empty();
         $(".test").empty();
         $(".modal-innerform").empty();
-
-        // $('#mealSelect').change(function(){ 
-        //     let value = $(this).val();
-        // console.log(value)                    
-        // });
-        
-        
         let i = 0;
         for(i = 0; i < objectArray.length; i++){
             if(parseInt(this.id) === objectArray[i].id){
-                let accomPrice = objectArray[i].price;
-                let nightsTotal = objectArray[i].nights;
-
                 let priceTotalForm = objectArray[i].price * dayDifferenceGlobal;
                 
 
@@ -1002,7 +980,7 @@ function modal(checkIn,checkOut, nightDifference){
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     `
-                )
+                );
                 $(".test").append(
                     `
                     <div class="modal-body__top container-fluid">
@@ -1086,7 +1064,7 @@ function modal(checkIn,checkOut, nightDifference){
                     </div>
                     
                     `
-                )
+                );
 
                 $(".modal-innerform").append(
                     `
@@ -1138,24 +1116,11 @@ function modal(checkIn,checkOut, nightDifference){
                     // get the values
                     let foodValue = $(this).val();
                     console.log( parseInt(priceTotalForm) + parseInt(foodValue) );  
-                    console.log(foodValue)
+                    console.log(foodValue);
                     window.foodValueGlobal = foodValue;
                     document.getElementById("orderTotal").innerHTML = "$ " + (parseInt(priceTotalForm) + parseInt(foodValue)) + " NZD";
                 });
-               
-                $('#guestSelect').change(function(){ 
-                    // get the values
-                    let value = $(this).val();
-                    console.log( parseInt(priceTotalForm) + parseInt(value) );  
-                    window.peopleGlobal = value;
-                    document.getElementById("orderTotal").innerHTML = "$ " + (parseInt(priceTotalForm)) + " NZD";
 
-
-                });
-
-                if($("#mealSelect") == "29"){
-                    ((parseInt(priceTotalForm) + parseInt(peopleGlobal)) + 29)
-                };
             }
         }
     });
@@ -1177,26 +1142,6 @@ modal();
 // ===================================================================
 // end of modal function
 // ===================================================================
-
-
-// ===================================================================
-// start of confirmation container
-// ===================================================================
-
-$("#confirmBooking").click(function(event){
-    event.preventDefault();
-    console.log("clicked");
-    $("#introPage").hide(); 
-    $("#acommodationContainer").hide(); 
-    $("#confirmationContainer").show();
-
-});
-
-// ===================================================================
-// end of confirmation container
-// ===================================================================
-
-
 
 // ===================================================================
 // start of generate card container
@@ -1228,9 +1173,9 @@ function generateCard(x){
 // ===================================================================
 
 
+// ===================================================================
+// event listeners
+// ===================================================================
 
 submitBtn.addEventListener('click', userSubmit);
-// searchFilter.addEventListener("click", filterSearchWord)
-// confirmBooking.addEventListener("click", confirmation)
-// confirmBooking.addEventListener("click", confirmBooking)
 });
