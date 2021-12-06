@@ -79,6 +79,7 @@
 
     &-input__location, &-input__people{
         margin-top: 0.5rem;
+        cursor: pointer;
     }
 
 }
@@ -127,7 +128,9 @@ color: blue;
 
 }
 
-
+// ========================================
+// media queries -- mobile
+// ========================================
 
 @media only screen and (max-width:425px){
 

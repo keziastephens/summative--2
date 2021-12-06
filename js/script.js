@@ -1,119 +1,3 @@
-console.log('linked');
-
-
-let script = '<script src="https://maps.googleapis.com/maps/api/js?key=' + key +'&callback=initMap&libraries=places&v=weekly" async defer >';
-// global variables
-let checkInDate,checkOutDate;
-let map;
-let markers =[];
-
-function initMap(){
-    let newZealand = {lat: -39.72496035524508, lng: 175.58280932991102};
-        $("#checkInDate").datepicker({
-        dateFormat: "yy-mm-dd",
-        changeMonth: true,
-        minDate: new Date(),
-        maxDate: "+1y",
-        onSelect: function(date){
-            let selectDate = new Date(date);
-            let msInADay = 86400000;
-            let stDate = new Date(selectDate.getTime() + msInADay);
-            // let fdfdf = window.checkInGlobal = date;
-            // console.log(fdfdf );
-                
-
-            $('#checkOutDate').datepicker('option', 'minDate', stDate);
-            let endDate = new Date(selectDate.getTime() + 15 * msInADay);
-
-            $('#checkOutDate').datepicker('option', 'maxDate', endDate);
-            console.log(date);
-            // checkInDate = date;
-
-            let checkInDateTest = new Date($('#checkInDate').val());
-            let checkOutDateTest = new Date($('#checkOutDate').val());
-            // console.log(checkInDateTest);
-            // console.log(checkOutDateTest);
-
-            // let checkInDay = checkInDateTest.getDate();
-            // let checkInMonth = checkInDateTest.getMonth();
-            // let checkInYear = checkInDateTest.getFullYear();
-            // let checkOutDay = checkOutDateTest.getDate();
-            // let checkOutMonth = checkOutDateTest.getMonth();
-            // let checkOutYear = checkOutDateTest.getFullYear();
-
-            // let checkInDetails = [checkInDay, checkInMonth, checkInYear].join('-');
-            // console.log(checkInDetails);
-
-            
-            // let checkOutDetails = [checkOutDay, checkOutMonth, checkOutYear].join('-');
-         
-        },
-    //   let fdfdf = window.checkInGlobal = date;
-    });
-   
-        $("#checkOutDate").datepicker({
-            dateFormat: 'yy-mm-dd',
-            changeMonth: true,
-            // checkOutDetails = outDate;
-            // window.checkOutGlobal = outDate;
-
-        });
-
-   
-
-    map = new google.maps.Map(document.getElementById('mapContainer'),{
-        zoom: 8,
-        // center: myLatLng,
-        center: newZealand 
-    });
-
- 
-
-
-    // let latitude = objectArray[i].latitude;
-    // let longitude = objectArray[i].longitude;
-    // setMarkers(map);
-
-
-
-
-}
-// global create lat and lng variables
-
-let longitude;
-let latitude;
-
-
-
-    // console.log(myLatLng);
-
-
-
-$(document).ready(function(){
-    $('body').append(script);
-// })
-
-
-
-
-// ===================================================================
-// start of query selectors
-// ===================================================================
-
-const confirmBooking = document.querySelector("#confirmBooking");
-const submitBtn = document.querySelector("#submitBtn");
-// const searchFilter = document.querySelector("#searchFilter");
-// const refreshButton = document.querySelector("#refresh")
-// const confirmBooking = document.querySelector("#confirmBooking")
-
-
-
-// ===================================================================
-// end of query selectors
-// ===================================================================
-
-
-
 // ===================================================================
 // start of arrays
 // ===================================================================
@@ -814,11 +698,118 @@ let objectArray = [
 
 ];
 
+console.log('linked');
+
+
+let script = '<script src="https://maps.googleapis.com/maps/api/js?key=' + key +'&callback=initMap&libraries=places&v=weekly" async defer >';
+// global variables
+let checkInDate,checkOutDate;
+let map;
+let markers =[];
+    let newZealand = {lat: -39.72496035524508, lng: 175.58280932991102};
+function initMap(){
+
+        $("#checkInDate").datepicker({
+        dateFormat: "yy-mm-dd",
+        changeMonth: true,
+        minDate: new Date(),
+        maxDate: "+1y",
+        onSelect: function(date){
+            let selectDate = new Date(date);
+            let msInADay = 86400000;
+            let stDate = new Date(selectDate.getTime() + msInADay);
+
+
+            $('#checkOutDate').datepicker('option', 'minDate', stDate);
+            let endDate = new Date(selectDate.getTime() + 15 * msInADay);
+
+            $('#checkOutDate').datepicker('option', 'maxDate', endDate);
+            console.log(date);
+
+            let checkInDateTest = new Date($('#checkInDate').val());
+            let checkOutDateTest = new Date($('#checkOutDate').val());
+        },
+    });
+   
+        $("#checkOutDate").datepicker({
+            dateFormat: 'yy-mm-dd',
+            changeMonth: true,
+        });
+
+   
+
+    map = new google.maps.Map(document.getElementById('mapContainer'),{
+        zoom: 8,
+        center: newZealand 
+    });
+
+ 
+    // setMarkers(map);
+
+    // let latitude = objectArray[i].latitude;
+    // let longitude = objectArray[i].longitude;
+    // setMarkers(map);
+    new google.maps.Marker({
+        // position: {lat:location[0], lng:location[1]},
+        position: {lat: -39.72496035524508, lng: 175.58280932991102},
+        map,
+    });
+
+};
+
+
+
+
+
+
+    
+
+function setMarkers(map){
+    for(let i = 0; i < objectArray.length; i++){
+    const location = [objectArray[i].latitude, objectArray[i].longitude];
+    console.log(location);
+    console.log(objectArray[i].latitude);
+    console.log(objectArray[i].longitude);
+    // new google.maps.Marker({
+    //     position: {lat:location[0], lng:location[1]},
+    //     map,
+    // });
+    console.log(location[0]);
+    console.log(location[1]);
+    // markers.push(marker);        
+    }
+}
+
+$(document).ready(function(){
+    $('body').append(script);
+
+
+
+
+
+// ===================================================================
+// start of query selectors
+// ===================================================================
+
+const confirmBooking = document.querySelector("#confirmBooking");
+const submitBtn = document.querySelector("#submitBtn");
+
+
+// ===================================================================
+// end of query selectors
+// ===================================================================
+
+
+
+
+
+
 // ===================================================================
 // end of arrays
 // ===================================================================
-
-
+$("#hamburger").click(function(){
+    $("#nav-mobile").toggle();
+});
 // ===================================================================
 // start of user input function
 // ===================================================================
@@ -915,14 +906,14 @@ function displayOptions(nights, guests,location){
                 if( ( (nights >= objectArray[i].minNight) && (nights <= objectArray[i].maxNight) && (guests >= objectArray[i].minPeople) && (guests <= objectArray[i].maxPeople)   ) ){
                     generateCard(i);
                     console.log(i);
-                    let location = {lat: objectArray[i].latitude, lng:objectArray[i].longitude};
+                    // let location = {lat: objectArray[i].latitude, lng:objectArray[i].longitude};
                     // console.log(location);
 
-                    let marker = new google.maps.Marker({
-                        position: location,
-                        map:map
-                    });
-                    markers.push(marker);
+                    // let marker = new google.maps.Marker({
+                    //     position: location,
+                    //     map:map
+                    // });
+                    // markers.push(marker);
             
                     
                     
@@ -935,17 +926,16 @@ function displayOptions(nights, guests,location){
                     generateCard(i);
                     console.log(i);
 
-                     let location = {lat: objectArray[i].latitude, lng:objectArray[i].longitude};
+                    //  let location = {lat: objectArray[i].latitude, lng:objectArray[i].longitude};
                     // console.log(location);
 
-                    let marker = new google.maps.Marker({
-                        position: location,
-                        map:map
-                    });
-                    markers.push(marker);
+                    // let marker = new google.maps.Marker({
+                    //     position: location,
+                    //     map:map
+                    // });
+                    // markers.push(marker);
                 }
             }
-         
          }
     console.log(markers);
 }
@@ -968,7 +958,7 @@ function displayOptions(nights, guests,location){
 function modal(checkIn,checkOut, nightDifference){   
 
     $('.card').click(function(){
-        reloadMarkers();
+        // reloadMarkers();
         console.log("click");
         $("#modalHeader").empty();
         $(".test").empty();
@@ -1119,14 +1109,7 @@ function modal(checkIn,checkOut, nightDifference){
                                 </div>    
                             </div>
                             <div class="guest-select">
-                                <select class="guests" name="" id="guestSelect">
-                                    <option class="gueststext" value="" disabled selected hidden>${valPeopleGlobal}</option>
-                                    <option value="${priceTotalForm * 0}">1</option>
-                                    <option value="${priceTotalForm * 1}">2</option>
-                                    <option value="${priceTotalForm * 2}">3</option>
-                                    <option value="${priceTotalForm * 3}">4</option>
-                                    <option value="${priceTotalForm * 4}">5</option>
-                                </select>
+                                <input type="text" class="guests" name="" id="guestSelect" value="${valPeopleGlobal}">
                             </div>
                             <div class="final-container">
                                 <div class="meals">
@@ -1140,7 +1123,7 @@ function modal(checkIn,checkOut, nightDifference){
                                 </div>
                                 <div class="confirmation-container">
                                     <p class="total-paragraph">Your Total is</p>
-                                    <h2 class="order-total" id="orderTotal">$ ${priceTotalForm * valPeopleGlobal} NZD</h2>
+                                    <h2 class="order-total" id="orderTotal">$ ${priceTotalForm} NZD</h2>
                                     <button class="confirm-button" id="confirmBooking" type="submit">Continue to Checkout</button>
                                 </div>
 
@@ -1165,7 +1148,7 @@ function modal(checkIn,checkOut, nightDifference){
                     let value = $(this).val();
                     console.log( parseInt(priceTotalForm) + parseInt(value) );  
                     window.peopleGlobal = value;
-                    document.getElementById("orderTotal").innerHTML = "$ " + (parseInt(priceTotalForm) + parseInt(value)) + " NZD";
+                    document.getElementById("orderTotal").innerHTML = "$ " + (parseInt(priceTotalForm)) + " NZD";
 
 
                 });
@@ -1181,13 +1164,13 @@ function modal(checkIn,checkOut, nightDifference){
 // let markers =[];
 
 modal();
-function reloadMarkers(){
-    // loop through our array and set the map to null value
-    for(let i =0; i<markers.length; i++){
-        markers[i].setMap(null);
-    }
-    markers=[];
-}
+// function reloadMarkers(){
+//     // loop through our array and set the map to null value
+//     for(let i =0; i < markers.length; i++){
+//         markers[i].setMap(null);
+//     }
+//     markers=[];
+// }
 
 
 
@@ -1231,7 +1214,7 @@ function generateCard(x){
                 </div>
                 <div class="card-body__right">
                     <h5 class="card-title">$${objectArray[x].price} NZD Per Night</h5>
-                    <h5 class="card-title">Total Price: $${objectArray[x].price * dayDifferenceGlobal * valPeopleGlobal}</h5>
+                    <h5 class="card-title">Total Price: $${objectArray[x].price * dayDifferenceGlobal}</h5>
                 </div>
             </div>
         </div>

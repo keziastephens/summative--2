@@ -8,6 +8,7 @@
 
     height: 20%;
     width: 100%;
+    display: flex;
 
     &__left{
         font-family: "nationalRegular";
@@ -367,85 +368,49 @@ option{
 }
 
 
+// ========================================
+// media queries -- tablet
+// ========================================
+
+@media only screen and (min-width:426px) and (max-width:768px){
+
+    .modal-dialog{
+        max-height: 50vh;
+        min-width: 100vw;
+        overflow-x: hidden;
+    }
+    .modal-body__top{
+        flex-wrap: wrap;
+    }
+
+    .modal-info__text{
+        font-size: 1.5rem;
+    }
+}
 
 
-// // .modal-content{
-// //     height: 70vh;
-// //     width: 70vw;
-// // }
+// ========================================
+// media queries -- mobile
+// ========================================
 
+@media only screen and (max-width:425px){
 
-// .modal{
-//     height: 70vh;
-//     width: 70vw;
-// }
+    .modal-dialog{
+        max-height: 50vh;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
 
-// .modal-header{
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-//     float: left;
-//     font-family: "myFirstFont";
-// }
+    
+    .modal-header{
+        flex-wrap: wrap;
+    }
 
+    .modal-body__top{
+        flex-wrap: wrap;
+    }
 
-
-// .modal-header__title{
-
-// }
-
-// .modal-header__title-two{
-//     font-size: 1.2rem;
-// }
-
-// .modal-header__elements{
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-// }
-
-// .modal-header__left{
-//     flex-direction: column;
-//     width: 48%;
-// }
-
-// .modal-header__middle{
-//     display: flex;
-//     width: 48%;
-// }
-
-// .modal-header__right{
-//     width: 4%;
-//     align-items: center;
-//     justify-content: center;
-// }
-
-// .modal-icons{
-//     padding-left: 1rem;
-//     padding-right: 1rem;
-//     display: flex;
-// }
-
-// .modal-body__top{
-//     display: flex;
-// }
-
-// // .modal-carousel{
-// //     height: 30vh;
-// // }
-
-// // .modal-dialog{
-// //     width: 70vw;
-// // }
-
-// .checkmarks-top{
-//     display: flex;
-// }
-
-// .fa-house-night{
-//     padding-right: 0.5rem;
-// }
-
-// .modal-header__info{
-//     padding-left: 0.5rem;
-// }
+    .modal-info__text{
+        font-size: 1rem;
+    }
+}

@@ -60,7 +60,7 @@
 }
 
 .hamburger-menu{
-    height: 35px;
+    height: 50px;
     display: none;
 }
 
@@ -70,19 +70,25 @@
 
 @media only screen and (max-width:425px){
 
-
+    .nav{
+        justify-content: space-between;
+    }
     .nav-logo{
         display: none;
+
     }
 
     .nav-mobile{
         display: block;
-        padding-left: 2rem;
+
+
+
     }
     .hamburger-menu{
         display: block;
-        float: right;
-        padding-left: 7rem;
+
+
+    
     }
 
     .nav-ul{
