@@ -10,4 +10,6 @@ Step Three: Insert your api key between the quotation marks after let key =
 It will look like this:
 let key = "your api key will be here"
 
+Make sure you are authorizing your API key by adding the URL to the list of recognized URLs. You can do this through the edit tab of the credentials API keys on google cloud platform. 
+
 Sweet! You are ready to go and can see the website with a map! 
