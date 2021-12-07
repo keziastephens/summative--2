@@ -1,107 +1,12 @@
-You will write information which is relevant to your project and the different steps that need to be taken for it to work.
+Hello! Welcome to my Second Summative of Winterscapes for Tourism New Zealand.
+There are a few things you need to do in order to get the website working to its full potential.
+Within the js folder, you will see a file named mapKey.js.
+In order to get maps working you will need to do the following:
 
-Step one: Rename the file mapKeyCopy.js to mapKey.js
-Step two: Paste in your API key.
+Step One: Grab your api key.
+Step Two: Insert it between the quotation marks after ley key =
 
+It will look like this:
+ley key = "your api key will be here"
 
-
-
-<!-- sort code -->
-
-$('#sortBtn').change(function(){
-    $('#cardContent').empty();
-    let sortValue = ($('#sortBtn').val()).toLowerCase();
-    console.log(sortValue);
-    if((sortValue === 'name') || (sortValue === 'price')){
-        sortByAscending(sortValue);
-    }
-});
-
-function sortByAscending(sortOrder){
-    
-        // console.log(sortOrder);
-        // console.log(cardSortGenerator);
-
-        cardSortGenerator.sort(function(a,b){
-            $('#acommodationCardContainer').empty();
-            let itemA;
-            let itemB;
-            
-
-                switch(sortOrder){
-                    case 'name':
-                        // $('#acommodationCardContainer').empty();
-                    itemA = a.name.toLowerCase(), itemB = b.name.toLowerCase();
-                        break;
-                    // case 'price':
-                    //     // $('#acommodationCardContainer').empty();
-                    //     console.log('price');
-                    //     itemA = a.parseInt(price), itemB = b.parseInt(price);
-                    //     break;
-                    default:
-                        console.log('not matching');
-                };
-                
-
-                if(itemA < itemB){
-                    return -1;
-                    // false
-                }
-                if(itemA > itemB){
-                    return 1;
-                    // true
-                }
-
-        //         sortCards();
-        // modal();
-       
-        });
-        sortCards();
-        modal();
-        console.log(cardSortGenerator);
-        // console.log(cardSortGenerator.price);
-        // 
-};
-
-
-
-// $('#refresh').click(function(){
-//     console.log('#refresh')
-//     $('#cardContent').empty();
-//     $('input[type=checkbox]').prop('checked',false);
-//     $('input[type=radio]').prop('checked',false);
-
-//     objectArray.sort(function(a,b){
-//         let itemA = a.id, itemB = b.id;
-
-//         if(itemA < itemB){
-//             return -1;
-//             // false
-//         }
-//         if(itemA > itemB){
-//             return 1;
-//             // true
-//         }
-//         console.log(objectArray);
-
-//     });
-
-
-//     allCards();
-//     modal();
-// });
-
-
-
-function allCards(){
-    $('#acommodationCardContainer').empty();
-    for(let i =0; i <objectArray.length; i++){
-        generateCard(i);
-    }
-};
-function sortCards(){
-    // $('#acommodationCardContainer').empty();
-    for(let i =0; i < cardSortGenerator.length; i++){
-        generateCard(i); 
-    }
-};
+Sweet! You are ready to go and can see the website with a map! 

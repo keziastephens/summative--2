@@ -698,14 +698,21 @@ let objectArray = [
 
 ];
 
-console.log('linked');
+// ===================================================================
+// end of arrays
+// ===================================================================
 
-
-let script = '<script src="https://maps.googleapis.com/maps/api/js?key=' + key +'&callback=initMap&libraries=places&v=weekly" async defer >';
+// ===================================================================
 // global variables
+let script = '<script src="https://maps.googleapis.com/maps/api/js?key=' + key +'&callback=initMap&libraries=places&v=weekly" async defer >';
 let map;
 let markers =[];
-    let newZealand = {lat: -39.72496035524508, lng: 175.58280932991102};
+let newZealand = {lat: -39.72496035524508, lng: 175.58280932991102};
+// ===================================================================
+
+// ===================================================================
+// start of initMap / datepicker function
+// ===================================================================
 
     function initMap(){
 
@@ -771,35 +778,35 @@ function setMarkers(map){
     }
 }
 
+// ===================================================================
+// end of initMap / datepicker function
+// ===================================================================
+
+// the document ready function signals that the DOM of the page is ready
 $(document).ready(function(){
     $('body').append(script);
 
 
-
-
-
 // ===================================================================
-// start of query selectors
-// ===================================================================
-
+// query selectors
 const submitBtn = document.querySelector("#submitBtn");
-
-
-// ===================================================================
-// end of query selectors
 // ===================================================================
 
 
 
-
-
-
 // ===================================================================
-// end of arrays
-// ===================================================================
+// hamburger menu function - something with this code seems to be broken
+// something about the toggle function is not working and outputting
+// future plan is to get this working
+console.log("hello"),$("#navMobile").hide(),$("#navMobile").show(),$("#hamburger").click(function(){$("#navMobile").toggle()});
+
 $("#hamburger").click(function(){
-    $("#nav-mobile").toggle();
+    console.log('click');
+    $("#navMobile").toggle();
 });
+// ===================================================================
+
+
 // ===================================================================
 // start of user input function
 // ===================================================================
@@ -809,7 +816,7 @@ function userSubmit(event){
     event.preventDefault();
     
     let msDay = 1000 * 3600 * 24;
-    let selectedLocation = $("#selectedLocation").val();
+    let locationSelect = $("#locationSelect").val();
     
     // access datepicker from here
     const checkInDate = new Date($('#checkInDate').val());
@@ -839,7 +846,7 @@ function userSubmit(event){
         alert('Please enter check in and check out dates');
     } else if( checkInDate.getTime() >= checkOutDate.getTime() ){
         alert('check out day cant be before check in date');
-    } else if( selectedLocation == null){
+    } else if( locationSelect == null){
         alert('Please choose a location');
     } else{
         $('#introPage').hide(); 
@@ -858,15 +865,11 @@ function userSubmit(event){
    console.log(valueOfPeople);
    window.valPeopleGlobal = valueOfPeople;
 
-   displayOptions(dayDifference, valueOfPeople,selectedLocation);
+   displayOptions(dayDifference, valueOfPeople,locationSelect);
    modal(checkInDetails, checkOutDetails, dayDifference);
 
 
 }
-
-
-
-
 // ===================================================================
 // end of user input function
 // ===================================================================
@@ -936,13 +939,8 @@ function displayOptions(nights, guests,location){
 // ===================================================================
 // start of modal function
 // ===================================================================
-
-
-
-
-// i need to pass my days data into here / any other data that i want to display on the form from the initial search
-
-
+// i need to pass my days data into here / any other data that i want to 
+// display on the form from the initial search
 function modal(checkIn,checkOut, nightDifference){   
 
     $('.card').click(function(){

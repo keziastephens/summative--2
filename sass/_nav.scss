@@ -11,8 +11,9 @@
         padding-left: 3rem;
     }
 
-    &-mobile{
+    &-mobile__logo{
         height: 6vh;
+        padding-right: 17rem;
         display: none;
     }
 
@@ -73,6 +74,36 @@ a:hover{
     display: none;
 }
 
+
+.nav-mobile{
+    // is not applying style in the document flow, can't find issue so have
+    // applied the display none to inline styling on html
+    display: none !important;
+    width: 100%;
+    min-height: 7vh;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-top: 0.1rem solid rgba(0,0,0,0.1);
+
+
+    &__ul{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding-top: 0.5rem;
+
+    }
+
+    &__list{
+        letter-spacing: 0.1rem;
+        list-style: none;
+        padding-top: 0.5rem;        
+    }
+}
 // ========================================
 // media queries -- mobile
 // ========================================
@@ -86,8 +117,8 @@ a:hover{
         display: none;
 
     }
-
-    .nav-mobile{
+    
+    .nav-mobile__logo{
         display: block;
 
 
@@ -95,9 +126,14 @@ a:hover{
     }
     .hamburger-menu{
         display: block;
+        padding-right: 1rem;
 
 
     
+    }
+
+    .nav-mobile{
+        display: block !important;
     }
 
     .nav-ul{

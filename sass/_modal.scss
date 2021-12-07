@@ -157,7 +157,7 @@
     min-height: 40vh;
     width: 70vw;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
     margin-top: 1rem;
 }
 
@@ -386,6 +386,22 @@ option{
     .modal-info__text{
         font-size: 1.5rem;
     }
+
+    .modal-body__bottom{
+        width: 100%;
+    }
+
+    .map-container{
+        width: 50%;
+    }
+
+    .modal-form__container{
+        width: 100%;
+        padding-left: 1rem;
+    }
+    .modal-form{
+        width: 100%;
+    }
 }
 
 
@@ -410,7 +426,57 @@ option{
         flex-wrap: wrap;
     }
 
+    .modal-header__address{
+        line-height: 1.6rem;
+    }
+
     .modal-info__text{
         font-size: 1rem;
+    }
+
+    .modal-header__middle{
+        flex-direction: column;
+    }
+
+    .checkmarks{
+        flex-direction: column;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+
+        &-individual{
+            width: 100%;
+            padding: 1rem;
+            width: 100%;
+        }
+    }
+
+    .modal-body__bottom{
+        width: 100%;
+        flex-direction: column;
+        flex-wrap: wrap-reverse;
+    }
+    .map-container{
+        min-height: 40vh;
+        width: 100%;
+        display: flex;
+    }
+
+    .fa-check{
+        font-size: 1.3rem;
+    }
+
+    .modal-innerform{
+        width: 100%;
+    }
+
+    .modal-form__container{
+        width: 100%;
+    }
+    .modal-form{
+        width: 100%;
+    }
+
+    .modal-form__header{
+        padding-top: 2rem;
     }
 }

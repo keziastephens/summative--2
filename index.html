@@ -43,7 +43,7 @@
     <nav class="nav">
 
         <a href="index.html"><img class="nav-logo" src="./img/winterscapes.svg" alt="Winterscapes"></a>
-        <a href="index.html"><img class="nav-mobile" src="./img/winterscapes-mobile.svg" alt="Winterscapes"></a>
+        <a href="index.html"><img class="nav-mobile__logo" src="./img/winterscapes-mobile.svg" alt="Winterscapes"></a>
 
 
       
@@ -55,6 +55,13 @@
 
       <img class="hamburger-menu" id="hamburger" src="./img/hamburger.png" alt="hamburger">
     </nav>
+
+    <div id="navMobile" class="nav-mobile" style="display:none">
+      <div class="nav-mobile__ul">
+          <a href="index.html" class="nav-mobile__list">Home</a>
+          <a href="https://www.tourismnewzealand.com/about/" target="_blank" class="nav-mobile__list">About TNZ</a>
+      </div>
+  </div>
 
     <!-- end of nav bar -->
 
@@ -77,7 +84,7 @@
 
             <div class="form-item">
               <label for="locationSelect">location</label>
-              <select name="locationSelect" id="selectedLocation" class="form-input__location">
+              <select name="locationSelect" id="locationSelect" class="form-input__location">
                 <option value="selectLocation" disabled selected hidden>Select your location</option>
                 <option value="Hanmer Springs, NZ">Hanmer Springs</option>
                 <option value="Mt Hutt, NZ">Mt Hutt</option>
@@ -98,8 +105,8 @@
             </div>
     
             <div class="form-item">
-                <label for="numberOfPeople">no. of people</label>
-                <select name="numberOfPeople" id="valueOfPeople" class="form-input__people">
+                <label for="valueOfPeople">no. of people</label>
+                <select name="valueOfPeople" id="valueOfPeople" class="form-input__people">
                     <option value="1">one</option>
                     <option value="2">two</option>
                     <option value="3">three</option>
@@ -109,7 +116,7 @@
             </div>
             
 
-            <button id="submitBtn" class="submitBtn">submit</button>
+            <button id="submitBtn" class="submit-button">submit</button>
         </form>
     </div>
    

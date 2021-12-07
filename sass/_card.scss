@@ -9,17 +9,6 @@
     display: none;
 }
 
-.filter-detail{
-    height: 5%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding-right: 1rem;
-    justify-content: flex-end;
-    position: fixed;
-    z-index: 100;
-}
-
 .card-container{
     height: 95%;
     width: 100%;
@@ -63,4 +52,18 @@
 
 .card-text{
     font-size: 1.2rem;
+}
+
+// ========================================
+// media queries -- mobile
+// ========================================
+
+@media only screen and (max-width:425px){
+    .card-title{
+        font-size: 1.4rem;
+    }
+    
+    .card-text{
+        font-size: 1rem;
+    }
 }
