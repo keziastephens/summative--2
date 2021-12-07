@@ -798,7 +798,11 @@ const submitBtn = document.querySelector("#submitBtn");
 // hamburger menu function - something with this code seems to be broken
 // something about the toggle function is not working and outputting
 // future plan is to get this working
-console.log("hello"),$("#navMobile").hide(),$("#navMobile").show(),$("#hamburger").click(function(){$("#navMobile").toggle()});
+$("#navMobile").hide();
+$("#navMobile").show();
+$("#hamburger").click(function(){
+    $("#navMobile").toggle();
+});
 
 $("#hamburger").click(function(){
     console.log('click');
